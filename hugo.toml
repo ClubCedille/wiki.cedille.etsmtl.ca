@@ -2,8 +2,8 @@ baseURL = "/"
 title = "Wiki Cedille"
 
 # Language settings
-contentDir = "content/en"
-defaultContentLanguage = "en"
+contentDir = "content/fr"
+defaultContentLanguage = "fr"
 defaultContentLanguageInSubdir = false
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
@@ -59,13 +59,18 @@ id = "UA-00000000-0"
 # Language configuration
 
 [languages]
-[languages.en]
-languageName ="English"
-# Weight used for sorting.
+[languages.fr]
+languageName ="Français"
 weight = 1
-[languages.en.params]
+[languages.fr.params]
 title = "Wiki Cedille"
 description = "Documentation officielle du club CEDILLE"
+[languages.en]
+languageName ="English"
+contentDir = "content/en"
+[languages.en.params]
+title = "Wiki Cedille"
+description = "Official documentation for the club CEDILLE"
 
 [markup]
   [markup.goldmark]
