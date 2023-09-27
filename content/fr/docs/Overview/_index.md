@@ -182,6 +182,7 @@ Les utilisateurs sont toutes les personnes ou entités qui utiliseront ce produi
 | --- | --- | --- |
 | **U1** Administrateur de la plateforme | Administrateur de la plateforme designé par le club CEDILLE | Maintenance de la plateforme et approbation d'un nouveau déploiement. |
 | **U2** Les clubs étudiants et ses membres (Utilisateur) | Club étudiant de l'École de Technologie Supérieure | Interagir avec la plateforme pour obtenir diverses informations sur leurs différents services. |
+| **U3** Personnel de l'ETS | Régie des clubs étudiants et services TI de l'ÉTS | Vérifier la comformité des applications et de l'infrastructure |
 
 ### 3.3 Environnement utilisateur
 
@@ -197,27 +198,35 @@ L'ensemble de la Plateforme CEDILLE et des services connexes doit être conforme
 
 Toutes les parties doivent respecter les normes et les protocoles mis en place pour assurer la sécurité, la performance et la disponibilité de la Plateforme CEDILLE. Ces normes sont définies et maintenues par le club CEDILLE **(S1)** et le Département informatique de l'ÉTS **(S3)**.
 
-## 4. Besoins des principaux utilisateurs et parties prenantes
+## 3.4 Besoins des principaux utilisateurs et parties prenantes
+
+Les besoins sont déterminés à partir d'une série d'entrevues et rencontre avec les parties prenantes. 
+Des rapports de ces entrevues et rencontres se trouvent à l'annexe 1 de ce document.
+
+De plus, les besoins d'administrations sont largement déterminés par les auteurs de ce document, puisqu'ils seront aussi responsable de l'administration de
+la plateforme qui sera mise en place.
+
+**Tableau 3.4.1: Définition des priorité**
+| **Priorité** | **Définition** |
+| ------------ | -------------- |
+| Critique     | Ce besoin est essentiel à la réussite du projet. S'il n'est pas comblé le projet serait non-fonctionnel |
+| Important    | Répondre à ce besoin apporte une valeure substentielle au projet; s'il n'est pas comblé il y aura un impact négatif sur l'expérience |
+| Facultatif   | Si ce besoin n'est pas comblé, l'expérience demeurera postive même si réduite |
 
 **Table 3.4.1: Besoins des principaux utilisateurs et parties prenantes**
 
-| **Besoin** | **Priorité** | **Situation courante**| **Situation souhaitée** |
-| --- | --- | --- | --- |
-| **N01** – Being able to join/quit a voice room | Critical | All calls (Jitsi or 1:1) must be initiated manually every time | A voice room must act as an always active call, with people joining and quitting them whenever they want |
-| **N02** – Talking to multiple persons in a voice room | Critical | Matrix only supports 1:1 calls and Jitsi through an extension, but Jitsi does not act as a voice room | Matrix should support many-to-many audio communication in a voice room |
-| **N03** – Seeing a room state | Important | N/A | Some information like connected users and active speaks should be displayed |
-| **N04** – Implementing the voice room in current solution with ease | Important | N/A | Through a library or a similar solution, this product should be easy enough to implement so that it can be done in a few hours |
-| **N05** – Voice needs to be only transmitted when active | Critical | N/A | Voice activity is detected and data is only transmitted when a person is talking |
-| **N06** – User wants to be able to mute himself | Critical | Users can mute themselves in 1:1 calls and Jitsi | Users can mute themselves in all calls including voice rooms |
-| **N07** – User wants to be adjust volume or mute other individually | Important | Jitsi supports muting others but adjusting volume individually | Users can mute others in a voice room or adjust their volume  |
-| **N08** – Integration with current and future Matrix specifications | Critical | 1:1 calls respect the Matrix protocol and Jitsi is an extension as defined in theMatrix protocol | This product should also fit in the Matrix specification and be open to future changes, notably the proposal for group VoIP[^4] |
-| **N09** – Users privacy and security must be protected | Critical | Everything is E2EE by default. | Some version of E2EE must be used in voice rooms. IPs must be protected |
-| **N10** – Users want to share their screen | Low | Only through a Jitsi call | Users should be able to share their screen directly in a room |
-| **N11** – Users want to show their camera feed | Low | Only through a Jitsi call | Users should be able to share their camera feed directly a room |
-| **N12** – Users want to suppress background noise | Low | N/A | Users should be able to activate some background noise suppression on their device |
-| **N13** – Users wants to experience a responsive environment | Important | We can currently scale a cluster with ease to accommodate load | The new solution should also be scalable by an admin and the load should be balanced between different app servers |
-| **N14** – Room owners wants to change some settings of the room | Low | Room owners can manage users and permissions | The new solution should allow personalization of the voice settings and permissions of a room (mute server, bitrate...) |
-| **N15** – Users want to be able to control their output sound intensity | Low | N/A | Should allow users to lower or increase their sound output to accommodate for different microphone sensitivity. |
+| **ID** | **Priorité** | **Besoin** |
+| --- | --- | --- |
+| **B01** | Critique | Les sites webs des clubs étudiants (U2) doivent être publiquement accessibles sur internet |
+| **B02** | Critique | Tous les services publics des clubs (U2) doivent utiliser HTTPS |
+| **B03** | Important | Les clubs (U2) devraient pouvoir effectuer des changements mineurs aux sites webs par eux-même |
+| **B04** | Critique | L'automatisation des processus doit permettre d'effectuer des changements aux applications des clubs (U2) en moins de 3 jours, incluant le processus de révision et approbation |
+| **B05** | Critique | Des processus d'observabilité doivent permettre aux administrateurs (U1) d'être notifié de tout problème avec une application d'un club (U2) |
+| **B06** | Critique | Des processus d'observabilité doivent permettre aux capitaines des clubs étudiants (U2) d'être notifié en cas d'incident |
+| **B07** | Facultatif | Les clubs (U2) devraient avoir accès à des tableaux de bord d'observabilité pour leurs applications |
+| **B08** | Critique | Les systèmes doivent être hautement disponible, de sorte que les mises à jours et les problèmes de serveurs de causent pas d'indisponibilité |
+| **B09** | Important | Avoir en place des processus de communication de rapports post-incidents pour les clubs (U2) lors d'incidents de disponibilité et pour l'ÉTS (U3) lors d'incidents de sécurité |
+| **B10** | Critique | Les bases de données des clubs (U2) et d'administration (U1) doivent pouvoir être restorés en cas de corruption de données ou d'évènements critiques |
 
 ## 4. Présentation du produit
 
