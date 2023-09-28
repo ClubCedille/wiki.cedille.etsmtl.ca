@@ -183,6 +183,7 @@ Les utilisateurs sont toutes les personnes ou entités qui utiliseront ce produi
 | **U1** Administrateur de la plateforme | Administrateur de la plateforme designé par le club CEDILLE | Maintenance de la plateforme et approbation d'un nouveau déploiement. |
 | **U2** Les clubs étudiants et ses membres (Utilisateur) | Club étudiant de l'École de Technologie Supérieure | Interagir avec la plateforme pour obtenir diverses informations sur leurs différents services. |
 | **U3** Personnel de l'ETS | Régie des clubs étudiants et services TI de l'ÉTS | Vérifier la comformité des applications et de l'infrastructure |
+| **U4** Développeurs applicatifs | Parfois membres de de CEDILLE, parfois d'autres clubs, ils sont responsable de la programmation des logiciels présents sur les serveurs |
 
 ### 3.3 Environnement utilisateur
 
@@ -198,7 +199,7 @@ L'ensemble de la Plateforme CEDILLE et des services connexes doit être conforme
 
 Toutes les parties doivent respecter les normes et les protocoles mis en place pour assurer la sécurité, la performance et la disponibilité de la Plateforme CEDILLE. Ces normes sont définies et maintenues par le club CEDILLE **(S1)** et le Département informatique de l'ÉTS **(S3)**.
 
-## 3.4 Besoins des principaux utilisateurs et parties prenantes
+## 3.4 Besoins des principaux utilisateurs
 
 Les besoins sont déterminés à partir d'une série d'entrevues et rencontre avec les parties prenantes. 
 Des rapports de ces entrevues et rencontres se trouvent à l'annexe 1 de ce document.
@@ -213,20 +214,42 @@ la plateforme qui sera mise en place.
 | Important    | Répondre à ce besoin apporte une valeure substentielle au projet; s'il n'est pas comblé il y aura un impact négatif sur l'expérience |
 | Facultatif   | Si ce besoin n'est pas comblé, l'expérience demeurera postive même si réduite |
 
-**Table 3.4.1: Besoins des principaux utilisateurs et parties prenantes**
+**Table 3.4.1: Besoins des principaux utilisateurs**
 
 | **ID** | **Priorité** | **Besoin** |
 | --- | --- | --- |
-| **B01** | Critique | Les sites webs des clubs étudiants (U2) doivent être publiquement accessibles sur internet |
-| **B02** | Critique | Tous les services publics des clubs (U2) doivent utiliser HTTPS |
-| **B03** | Important | Les clubs (U2) devraient pouvoir effectuer des changements mineurs aux sites webs par eux-même |
-| **B04** | Critique | L'automatisation des processus doit permettre d'effectuer des changements aux applications des clubs (U2) en moins de 3 jours, incluant le processus de révision et approbation |
-| **B05** | Critique | Des processus d'observabilité doivent permettre aux administrateurs (U1) d'être notifié de tout problème avec une application d'un club (U2) |
-| **B06** | Critique | Des processus d'observabilité doivent permettre aux capitaines des clubs étudiants (U2) d'être notifié en cas d'incident |
-| **B07** | Facultatif | Les clubs (U2) devraient avoir accès à des tableaux de bord d'observabilité pour leurs applications |
-| **B08** | Critique | Les systèmes doivent être hautement disponible, de sorte que les mises à jours et les problèmes de serveurs de causent pas d'indisponibilité |
-| **B09** | Important | Avoir en place des processus de communication de rapports post-incidents pour les clubs (U2) lors d'incidents de disponibilité et pour l'ÉTS (U3) lors d'incidents de sécurité |
-| **B10** | Critique | Les bases de données des clubs (U2) et d'administration (U1) doivent pouvoir être restorés en cas de corruption de données ou d'évènements critiques |
+| **B01** | Critique | La gestion de la plateforme par les administrateurs (U1) doit pouvoir se faire par différents niveaux de connaissance: des débutants doivent pouvoir gérer la plateforme pour des déploiements de bases et avoir un chemin clair d'apprentissage à travers la plateforme pour devenir un expert 
+| **B02** | Critique | Les sites webs des clubs étudiants (U2) doivent être publiquement accessibles sur internet |
+| **B03** | Critique | Tous les services publics des clubs (U2) doivent utiliser HTTPS |
+| **B04** | Important | Les clubs (U2) devraient pouvoir effectuer des changements mineurs aux sites webs par eux-même |
+| **B05** | Critique | L'automatisation des processus doit permettre d'effectuer des changements aux applications des clubs (U2) en moins de 3 jours, incluat le processus de révision et approbation |
+| **B06** | Critique | Des processus d'observabilité doivent permettre aux administrateurs (U1) d'être notifié de tout problème avec une application d'un club (U2) |
+| **B07** | Important | Des processus d'observabilité doivent permettre aux capitaines des clubs étudiants (U2) d'être notifié en cas d'incident |
+| **B08** | Facultatif | Les clubs (U2) devraient avoir accès à des tableaux de bord d'observabilité pour leurs applications |
+| **B09** | Critique | Les systèmes doivent être hautement disponible, de sorte que les mises à jours et les problèmes de serveurs de causent pas d'indisponibilité |
+| **B10** | Important | Avoir en place des processus de communication de rapports post-incidents pour les clubs (U2) lors d'incidents de disponibilité et pour l'ÉTS (U3) lors d'incidents de sécurité |
+| **B11** | Critique | Les bases de données des clubs (U2) et d'administration (U1) doivent pouvoir être restorés en cas de corruption de données ou d'évènements critiques |
+| **B12** | Important | Une documentation orienté utilisateurs/clubs (U2) doit décrire le fonctionnement des outils et processus
+| **B13** | Critique | Chaque image déployé doit en tout temps avoir les correctifs de sécurité appliqués. Les services TI (U3) doivent pouvoir vérifier cela |
+| **B14** | Critique | Le personnel de l'ÉTS (U3) doit pouvoir valider quelles sont les applications déployés sur les serveurs et lesquelles sont publiques |
+| **B15** | Facultatif | Le personnel de l'ÉTS (U3) doit être notifié lors du déploiement d'une nouvelle application et dois approuver la demande |
+| **B16** | Critique | Les services TI (U3) et les administrateurs de la plateforme (U1) doivent pouvoir retracer et annuler tout changement effectué à la plateforme |
+| **B17** | Important | Les administrateur (U1) et les développeurs (U4) doivent avoir accès à des environnements de type "sandbox" pour tester de nouvelles applications et projets |
+| **B18** | Important | Les développeurs (U4) doivent pouvoir tester leur application dans un environnement similaire à la production avant d'effectuer une mise à jour ou un nouveau déploiement |
+| **B19** | Critique | Les administrateurs (U1), le personnel de l'ÉTS (U3) et les développeurs applicatifs (U4) doivent avoir accès aux logs, traces et métriques selon ce qui les concerne |
+| **B20** | Critique | La gestion de la plateforme pour un administrateur (U1) doit être documentée en détail |
+| **B21** | Critique | Les tests et déploiements du nouveau code écrit par les développeurs (U4) doivent être automatisés pour réduire la dépendances aux administrateurs (U1) |
+| **B22** | Important | Des systèmes de tests unitaires doivent être mis en place pour le nouveau code écris par les développeurs (U4) |
+| **B23** | Facultatif | Des systèmes de tests de qualité de code doivent être mis en place pour le nouveau code écris par les développeurs (U4) |
+| **B24** | Important | Des systèmes de validation des configurations Kubernetes doivent être mis en place pour éviter des erreurs de configuration par les administrateurs (U4) |
+| **B25** | Important | Des sytèmes de scan doivent détecter le code qui amène des risques de sécurité |
+| **B26** | Critique | Les secrets que gèrent les administrateurs (U4) doivent être protégés et encryptés pour éviter les accès non-autorisés |
+| **B27** | Critique | Les mises à jours doivent être automatisés ou semi-automatisés pour conserver les applications et dépendances à jour |
+| **B28** | Facultatif | Les déploiements devraient se faire progressivement, en donnant aux développeurs (U4) le moyen d'annuler en cas d'une augmentation du taux d'erreur |
+
+
+
+
 
 ## 4. Présentation du produit
 
