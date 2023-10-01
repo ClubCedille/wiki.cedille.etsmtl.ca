@@ -265,6 +265,8 @@ Le produit est un système qui va permettre le déploiement et l'hébergement d'
 
 **Table 4.2.1: Caractéristiques correspondantes pour chaque besoin de l'utilisateur**
 
+TODO
+
 | **Besoin de l'utilisateur** | **Caractéristiques correspondantes** |
 | --- | --- |
 | **N01** –  |  |
@@ -308,6 +310,8 @@ Cette section énumère les hypothèses et dépendances qui sont essentielles po
 
 **Tableau 5.1 : Caractéristiques du produit**
 
+TODO
+
 | **ID** | **Description** | **Priorité** |
 | --- | --- | --- |
 | CAR1  |  |  |
@@ -334,36 +338,39 @@ Cette section énumère les hypothèses et dépendances qui sont essentielles po
 
 | **ID** | **Contraintes** | **Description** |
 | --- | --- | --- |
-| C01 |     |  |
-| C02 |     |  |
+| C01 | Interdiction de stocker des données personelles. | Du aux politiques de protection de données de l'ÉTS, on a jugé qu'il est moins risqué pour le projet de ne jamais stocker des données personelles dans la plateforme cedille. |
 
 ### 6. Attributs de qualité
 
 **Interopérabilité**
 
-AQ1 - 
+AQ1 - TODO
 
 **Performance**
 
-AQ2 – 
+AQ2 – La performance des application des clubs doivent être suffisants selon les besoins de chaque application.
 
 **Modifiabilité**
 
-AQ3 – 
+AQ3 – Tout élement du système doit être facilement modifiable, préférablement par le code source.
 
 **Securité**
 
-AQ4 – Confidential data must be protected
+AQ4 – La confidentialité des données doit être conservée en tout temps.
 
-AQ5 – 
+AQ5 – La configuration du sytème est seulement modifiable par les parties autorisés.
+
+AQ6 – Les secrets sont chriffés au repos et ne sont pas exposés plubliquement.
 
 **Usabilité**
 
-AQ6 – 
+AQ6 – Chaque couche du système doit être documenté
+
+AQ7 – Le système doit être compréhensible pour tout membre du club Cedille (nouveau et anciens). 
 
 **Évolutivité**
 
-AQ7 – Product server application must be scalable to accommodate different loads
+AQ8 – Le système devrait gérer la mise à l'échelle des applications selon les besoins en performance.
 
 ## 7. Autres exigences
 
