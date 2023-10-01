@@ -253,14 +253,13 @@ la plateforme qui sera mise en place.
 
 ## 4. Présentation du produit
 
-This product will allow users to connect to voicerooms with a client using this product SDK and with a homeserver serving this product App Server. The product will respect the Matrix protocol philosophy by enabling distributed, E2EE and private voice communications.
+Le produit est un système qui va permettre le déploiement et l'hébergement d'applications Web et autres pour les clubs étudiants de l'ÉTS. L'objectif est que l'architecture du système suit la philosophie du DevOps dans chaque couche d'implémentation.
 
 ### 4.1 Contexte du produit
 
-![](./vision-context-view.drawio.svg)
+![Diagramme de contexte](./platforme_cedille_ctx.svg)
 
 **Figure 4.1.1:** Contexte du produit
-
 
 ### 4.2 Principaux avantages
 
@@ -268,21 +267,21 @@ This product will allow users to connect to voicerooms with a client using this 
 
 | **Besoin de l'utilisateur** | **Caractéristiques correspondantes** |
 | --- | --- |
-| **N01** – Being able to join/quit a voice room | CAR2 |
-| **N02** – Talking to multiple persons in a voice room | CAR2 |
-| **N03** – Seeing a room state | CAR3 |
-| **N04** – Implementing the voice room in current solution with ease | CAR1, CAR4, AQ3, AQ6 |
-| **N05** – Voice needs to be only transmitted when active | CAR3 |
-| **N06** – User wants to be able to mute himself | CAR9 |
-| **N07** – User wants to be adjust volume or mute other individually or as a whole|CAR6, CAR7, CAR9|
-| **N08** – Integration with current and future Matrix specifications |CU01, CU02, AQ1|
-| **N09** – Users privacy and security must be protected |CAR10, CAR11, AQ4, AQ5|
-| **N10** – Users want to share their screen |CAR12, CAR13|
-| **N11** – Users want to show their camera feed |CAR12, CAR13|
-| **N12** – Users want to suppress background noise |CAR14|
-| **N13** – Users wants to experience a responsive environment |AQ2, AQ7|
-| **N14** – Room owners wants to change some settings of the room |CAR4|
-| **N15** – Users want to be able to control their input sound intensity |CAR15|
+| **N01** –  |  |
+| **N02** –  |  |
+| **N03** –  |  |
+| **N04** –  |  |
+| **N05** –  |  |
+| **N06** –  |  |
+| **N07** –  |  |
+| **N08** –  |  |
+| **N09** –  |  |
+| **N10** –  |  |
+| **N11** –  |  |
+| **N12** –  |  |
+| **N13** –  |  |
+| **N14** –  |  |
+| **N15** –  |  |
 
 
 ### 4.3 Hypothèses et dépendances
@@ -311,21 +310,21 @@ Cette section énumère les hypothèses et dépendances qui sont essentielles po
 
 | **ID** | **Description** | **Priorité** |
 | --- | --- | --- |
-| CAR1  | The product is a client library implementable by a developer and a app server ||
-| CAR2  | The product allows users to connect to voice rooms and discuss with other users connected ||
-| CAR3  | The product shows the room and users status : who is there, who is talking, who is streaming content etc. ||
-| CAR4 | The product offers room-level settings tor the room owner ||
-| CAR5  | The client library detects when the noise is under a certain level and stops transmitting sound | |
-| CAR6  | The App Server API is open and documented so anyone can use it and extend functionalities ||
-| CAR7  | The client library allows the end user to adjust other user's volume and mute them||
-| CAR8  | The App Server allows Administrators to mute users for all users server-wide ||
-| CAR9  | The client library allows users to mute or deafen themselves ||
-| CAR10 | The product uses E2EE for signaling ||
-| CAR11 | The product hides IP adresses of users ||
-| CAR12 | The App server supports video streams for screen and camera sharing ||
-| CAR13 | The client library supports device (web or OS) API for screen and camera video streams ||
-| CAR14 | The product offer the user the option to enable a filter layer to suppress background noise (e.g. RNNoise) ||
-| CAR15 | The client library allows the users to change its input sound intensity ||
+| CAR1  |  |  |
+| CAR2  |  |  |
+| CAR3  |  ||
+| CAR4  |  ||
+| CAR5  |  | |
+| CAR6  |  ||
+| CAR7  | ||
+| CAR8  |  ||
+| CAR9  |  ||
+| CAR10 |  ||
+| CAR11 |  ||
+| CAR12 |  ||
+| CAR13 |  ||
+| CAR14 |  ||
+| CAR15 |  ||
 
 
 
@@ -335,32 +334,32 @@ Cette section énumère les hypothèses et dépendances qui sont essentielles po
 
 | **ID** | **Contraintes** | **Description** |
 | --- | --- | --- |
-| C01 |Matrix protocol adherence| Product must adhere to the matrix protocol as much as possible |
-| C02 |Matrix group VoIP proposition adherence| Product should try to follow the existing protocol extension proposition so when (and if) it is accepted in the feature, there is as few conflicts to resolve as possible[^4] |
+| C01 |     |  |
+| C02 |     |  |
 
 ### 6. Attributs de qualité
 
 **Interopérabilité**
 
-AQ1 - The solution MUST be compatible with the Matrix ecosystem
+AQ1 - 
 
 **Performance**
 
-AQ2 – Voice data must be encoded-decoded fast enough to be unnoticeable
+AQ2 – 
 
 **Modifiabilité**
 
-AQ3 – The system must be easily modified for different languages/platforms/OS
+AQ3 – 
 
 **Securité**
 
 AQ4 – Confidential data must be protected
 
-AQ5 – Voice signaling integrity must be protected
+AQ5 – 
 
 **Usabilité**
 
-AQ6 – Developers should be able to use the APIs and libraries of this product with ease
+AQ6 – 
 
 **Évolutivité**
 
