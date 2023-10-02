@@ -17,6 +17,7 @@ Alternativement :
 ## Exécuter le site web localement
 Une fois que vous avez fait votre copie de travail du repo du site, à partir du dossier racine du repo, exécutez :
 ```
+npm install
 hugo server
 ```
 
