@@ -161,8 +161,8 @@ sidebar_search_disable = false
 [params.ui.feedback]
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-yes = 'Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
-no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
+yes = 'Glad to hear it! Please <a href="https://github.com/clubcedille/wiki.cedille.etsmtl.ca/issues/new">tell us how we can improve</a>.'
+no = 'Sorry to hear that. Please <a href="https://github.com/clubcedille/wiki.cedille.etsmtl.ca/issues/new">tell us how we can improve</a>.'
 
 # Adds a reading time to the top of each doc.
 # If you want this feature, but occasionally need to remove the Reading time from a single page,
@@ -174,35 +174,29 @@ enable = false
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 [[params.links.user]]
   name = "User mailing list"
-  url = "https://example.org/mail"
+  url = "cedille@etsmtl.net"
   icon = "fa fa-envelope"
-  desc = "Discussion and help from your fellow users"
+  desc = "Contact us by email"
 [[params.links.user]]
-  name ="Twitter"
-  url = "https://example.org/twitter"
-  icon = "fab fa-twitter"
-  desc = "Follow us on Twitter to get the latest news!"
-[[params.links.user]]
-  name = "Stack Overflow"
-  url = "https://example.org/stack"
-  icon = "fab fa-stack-overflow"
-  desc = "Practical questions and curated answers"
-# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
+  name ="Linkedin"
+  url = "https://www.linkedin.com/company/club-cedille/"
+  icon = "fab fa-linkedin"
+  desc = "Follow us on Linkedin for news and updates"
 [[params.links.developer]]
   name = "GitHub"
-  url = "https://github.com/google/docsy"
+  url = "https://github.com/ClubCedille"
   icon = "fab fa-github"
   desc = "Development takes place here!"
 [[params.links.developer]]
-  name = "Slack"
-  url = "https://example.org/slack"
-  icon = "fab fa-slack"
-  desc = "Chat with other project developers"
+  name = "Discord"
+  url = "https://discord.gg/hvb9EgG8"
+  icon = "fab fa-discord"
+  desc = "Chat with our members!"
 [[params.links.developer]]
-  name = "Developer mailing list"
-  url = "https://example.org/mail"
-  icon = "fa fa-envelope"
-  desc = "Discuss development issues around the project"
+  name = "Cedille website"
+  url = "https://cedille.etsmtl.ca"
+  icon = "fa fa-globe"
+  desc = "Cediile's website"
 
 # hugo module configuration
 

@@ -34,8 +34,7 @@ Voici une vue d'ensemble sur notre nouvelle plateforme CEDILLE. Cette section es
   * [6. Attributs de qualité](#6-attributs-de-qualité)
 - [7. Autres exigences](#7-autres-exigences)
   * [7.1 Normes et standards](#71-normes-et-standards)
-  * [7.2 Configuration requise](#72-configuration-requise)
-  * [7.3 Exigences en matière de documentation](#73-exigences-en-matière-de-documentation)
+  * [7.2 Exigences en matière de documentation](#72-exigences-en-matière-de-documentation)
 
 ## 1. Survol
 
@@ -247,10 +246,6 @@ la plateforme qui sera mise en place.
 | **B27** | Critique     | Les mises à jours doivent être automatisés ou semi-automatisés pour conserver les applications et dépendances à jour                                                                                                                                                                            |
 | **B28** | Facultatif   | Les déploiements devraient se faire progressivement, en donnant aux développeurs (U4) le moyen d'annuler en cas d'une augmentation du taux d'erreur                                                                                                                                             |
 
-
-
-
-
 ## 4. Présentation du produit
 
 Le produit est un système qui va permettre le déploiement et l'hébergement d'applications Web et autres pour les clubs étudiants de l'ÉTS. L'objectif est que l'architecture du système suit la philosophie du DevOps dans chaque couche d'implémentation.
@@ -261,32 +256,7 @@ Le produit est un système qui va permettre le déploiement et l'hébergement d'
 
 **Figure 4.1.1:** Contexte du produit
 
-### 4.2 Principaux avantages
-
-**Table 4.2.1: Caractéristiques correspondantes pour chaque besoin de l'utilisateur**
-
-TODO
-
-| **Besoin de l'utilisateur** | **Caractéristiques correspondantes** |
-|-----------------------------|--------------------------------------|
-| **N01** –                   |                                      |
-| **N02** –                   |                                      |
-| **N03** –                   |                                      |
-| **N04** –                   |                                      |
-| **N05** –                   |                                      |
-| **N06** –                   |                                      |
-| **N07** –                   |                                      |
-| **N08** –                   |                                      |
-| **N09** –                   |                                      |
-| **N10** –                   |                                      |
-| **N11** –                   |                                      |
-| **N12** –                   |                                      |
-| **N13** –                   |                                      |
-| **N14** –                   |                                      |
-| **N15** –                   |                                      |
-
-
-### 4.3 Hypothèses et dépendances
+### 4.2 Hypothèses et dépendances
 
 Cette section énumère les hypothèses et dépendances qui sont essentielles pour le développement et le déploiement de la Plateforme CEDILLE.
 
@@ -300,44 +270,49 @@ Cette section énumère les hypothèses et dépendances qui sont essentielles po
 - Kubernetes: Le bon fonctionnement de la plateforme repose sur la dernière version stable de Kubernetes.
 - Outils de Surveillance: La plateforme dépend de solutions de surveillance comme Pixie, OpenTelemetry, ClickHouse et Grafana pour le suivi des performances et de l'état du système.
 
-### 4.4 Licence
+### 4.3 Licence
 
 Étant donné que le club CEDILLE a une dimension éducative et vise à enseigner les technologies DevOps, Kubernetes, et la gestion de serveur, le choix d'une licence qui favorise la flexibilité, l'accessibilité et la collaboration est crucial. C'est pourquoi nous avons opté pour la licence [Apache 2.0](../../../../.LICENSE) pour notre infrastructure.
 
 
 
-### 4.5 Caractéristiques du produit
+### 4.4 Caractéristiques du produit
 
-**Tableau 5.1 : Caractéristiques du produit**
-
-TODO
-
-| **ID** | **Priorité** | **Besoins correspondants** | **Description**                                                                                                                                                                                                                              |
-|--------|--------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CAR1   |              |                            | 6 serveurs (3 controlplanes, 3 workers) seront déployés pour atteindre la haute disponibilité pour la gestion et pour les applications                                                                                                       |
-| CAR2   |              |                            | Les serveurs utiliseront le système d'exploitation minimal "Talos OS" afin de réduire la surface d'attaque et de faciliter la gestion et les mises à jours du systèmes d'exploitation par un API web sécurisé                                |
-| CAR3   |              |                            | L'infrastructure sera définie *as code* en utilisant terraform. Il s'agira ici des configurations du matériel résautique ainsi que des serveurs eux-même.                                                                                    |
-| CAR4   |              |                            | Les serveurs et le routeur utiliseront BGP (MetalLB sur Kubernetes) afin d'avoir de l'équilibrage de charge entre les serveurs                                                                                                               |
-| CAR5   |              |                            | Plusieurs environnements seront logiquement séparés en utilisant vCluster afin de créer des environnements Kubernetes virtuels pour la production, le développement et autres.                                                               |
-| CAR6   |              |                            | Le programme de *reverse-proxy/ingress* Contour sera installé et configuré afin de faire le routage des requêtes HTTP et configurer les certificats HTTPS. Ce systèmes ingress est léger et simple à configurer.                             |
-| CAR7   |              |                            | Le programme de service mesh *Linkerd* sera utilisé pour connecter les applications entre elles de façon sécuritaires et pour gérer les déploiements progressifs.                                                                            |
-| CAR8   |              |                            | Les disques des serveurs seront gérés par Rook/Ceph avec de la réplication de données afin de réduire les risques de pertes de donnée et les périodes d'instabilité.                                                                         |
-| CAR9   |              |                            | Les données stockés sur Rook/Ceph seront régulièrement sauvegardés sur Google Cloud afin d'assurer la récupération des données dans le cas d'un évènement catastrophique.                                                                    |
-| CAR10  |              |                            | Les communications entre les services seront définis via des NetworkPolicies afin de réduire les risques d'attaques via un composant compromis                                                                                               |
-| CAR11  |              |                            | *Kubevirt* sera installé et configuré afin de permettre le déploiement de machines virtuelles lorsque la conteneurisation est difficile voir impossible.                                                                                     |
-| CAR12  |              |                            | Une plateforme d'observabilité basée sur OpenTelemetry, Clickhouse et Grafana sera mise en place afin d'identifier plus rapidemement la source de problèmes                                                                                  |
-| CAR13  |              |                            | Pixie et les outils d'instrumentations d'OpenTelemetry seront utilisés pour recueillir les logs, traces et métriques de Kuberenetes et des applications                                                                                      |
-| CAR14  |              |                            | Github Actions sera utilisé afin d'éxécuter des pipelines d'intégration                                                                                                                                                                      |
-| CAR15  |              |                            | Le Github Registry sera utilisé pour stocké les images des conteneurs.                                                                                                                                                                       |
-| CAR16  |              |                            | ArgoCD sera utilisé comme solution GitOps pour la gestion des déploiements d'applications. Cet outil est *auto-correcting*, c'est-à-dire que toute différence entre l'état actuel et les configurations sur git sera corrigé automatiquement |
-| CAR17  |              |                            | Kustomize sera utilisé afin de gérer les ensembles de manifestes Kubernetes de chaque application déployés. Permettra aussi de définir des *layers* pour la production et pour le développement.                                             |
-| CAR18  |              |                            | Kube-Score (bonnes pratiques / erreurs) et Kubescape (sécurité) seront utilisé afin de réviser et tester automatiquement les changements aux manifestes Kubernetes.                                                                          |
-| CAR19  |              |                            | ODO (Red Hat) sera utilisé pour construire des images automatiquements pour les projets sans Containerfile/Dockerfile et faciliter le développement                                                                                          |
-| CAR20  |              |                            | Hashicorp Vault sera déployé et utilisé pour la gestion des secrets. Google KMS sera utilisé pour la décryption de Vault.                                                                                                                    |
-| CAR21  |              |                            | Trivy et Cosign seront utilisés pour tester la sécurité des images et les signer avant leur publication.                                                                                                                                     |
-| CAR22  |              |                            | Github Advanced Security, avec CodeQL, sera utilisé pour trouver les erreurs de sécurité dans le code des applications gérés par CÉDILLE.                                                                                                    |
-
-
+**Tableau 4.4.1 : Caractéristiques du produit**
+| **ID** | **Priorité** | **Besoins correspondants** | **Description** |
+|--------|--------------|----------------------------|-----------------|
+| CAR1   | Critique     | B09                        | 6 serveurs (3 controlplanes, 3 workers) seront déployés pour atteindre la haute disponibilité pour la gestion et pour les applications. |
+| CAR2   | Critique     | B13, B26                   | Les serveurs utiliseront le système d'exploitation minimal "Talos OS" afin de réduire la surface d'attaque et de faciliter la gestion et les mises à jours du systèmes d'exploitation par un API web sécurisé. |
+| CAR3   | Important    | B01, B16                   | L'infrastructure sera définie *as code* en utilisant terraform. Il s'agira ici des configurations du matériel résautique ainsi que des serveurs eux-même. |
+| CAR4   | Important    | B02, B03                   | Les serveurs et le routeur utiliseront BGP (MetalLB sur Kubernetes) afin d'avoir de l'équilibrage de charge entre les serveurs. |
+| CAR5   | Critique     | B18                        | Plusieurs environnements seront logiquement séparés en utilisant vCluster afin de créer des environnements Kubernetes virtuels pour la production, le développement et autres. |
+| CAR6   | Critique     | B03                        | Le programme de *reverse-proxy/ingress* Contour sera installé et configuré afin de faire le routage des requêtes HTTP et configurer les certificats HTTPS. Ce systèmes ingress est léger et simple à configurer. |
+| CAR7   | Important    | B28                        | Le programme de service mesh *Linkerd* sera utilisé pour connecter les applications entre elles de façon sécuritaires et pour gérer les déploiements progressifs. |
+| CAR8   | Critique     | B11                        | Les disques des serveurs seront gérés par Rook/Ceph avec de la réplication de données afin de réduire les risques de pertes de donnée et les périodes d'instabilité. |
+| CAR9   | Critique     | B11                        | Les données stockés sur Rook/Ceph seront régulièrement sauvegardés sur Google Cloud afin d'assurer la récupération des données dans le cas d'un évènement catastrophique. |
+| CAR10  | Critique     | B13, B14, B25              | Les communications entre les services seront définis via des NetworkPolicies afin de réduire les risques d'attaques via un composant compromis. |
+| CAR11  | Facultatif   | B18                        | *Kubevirt* sera installé et configuré afin de permettre le déploiement de machines virtuelles lorsque la conteneurisation est difficile voir impossible. |
+| CAR12  | Critique     | B06, B07, B08              | Une plateforme d'observabilité basée sur OpenTelemetry, Clickhouse et Grafana sera mise en place afin d'identifier plus rapidemement la source de problèmes. |
+| CAR13  | Critique     | B06, B19                   | Pixie et les outils d'instrumentations d'OpenTelemetry seront utilisés pour recueillir les logs, traces et métriques de Kuberenetes et des applications. |
+| CAR14  | Important    | B21                        | Github Actions sera utilisé afin d'éxécuter des pipelines d'intégration. |
+| CAR15  | Important    | B13                        | Le Github Registry sera utilisé pour stocké les images des conteneurs. |
+| CAR16  | Critique     | B05, B16                   | ArgoCD sera utilisé comme solution GitOps pour la gestion des déploiements d'applications. Cet outil est *auto-correcting*, c'est-à-dire que toute différence entre l'état actuel et les configurations sur git sera corrigé automatiquement. |
+| CAR17  | Important    | B21                        | Kustomize sera utilisé afin de gérer les ensembles de manifestes Kubernetes de chaque application déployés. Permettra aussi de définir des *layers* pour la production et pour le développement. |
+| CAR18  | Important    | B22, B24                   | Kube-Score (bonnes pratiques / erreurs) et Kubescape (sécurité) seront utilisé afin de réviser et tester automatiquement les changements aux manifestes Kubernetes. |
+| CAR19  | Facultatif   | B18                        | ODO (Red Hat) sera utilisé pour construire des images automatiquements pour les projets sans Containerfile/Dockerfile et faciliter le développement. |
+| CAR20  | Critique     | B26                        | Hashicorp Vault sera déployé et utilisé pour la gestion des secrets. Google KMS sera utilisé pour la décryption de Vault. |
+| CAR21  | Critique     | B13, B25                   | Trivy et Cosign seront utilisés pour tester la sécurité des images et les signer avant leur publication. |
+| CAR22  | Critique     | B25                        | Github Advanced Security, avec CodeQL, sera utilisé pour trouver les erreurs de sécurité dans le code des applications gérés par CÉDILLE. |
+| CAR23  | Moyenne      |	B08, B12, B19              | Intégration d'un tableau de bord analytique pour aider les clubs à comprendre l'utilisation et les performances de leurs applications. |
+| CAR24  | Moyenne      |	B05, B16                   | Mise en place d'un journal d'audit complet pour suivre tous les changements et opérations réalisés sur la plateforme. |
+| CAR25  | Moyenne      |	B12, B20                   | Mise à disposition d'un wiki intégré avec des tutoriels, des guides et des FAQ pour les administrateurs et les utilisateurs de la plateforme. |
+| CAR26  | Moyenne      |	B17, B18                   | Intégration d'outils de simulation pour aider les développeurs à tester leurs applications dans un environnement similaire à la production. |
+| CAR27  | Haute        |	B04, B05, B21              | Facilité d'auto-déploiement pour les clubs, à travers une bonne documentation et des pipelines permettant des mises à jour autonomes sans dépendance constante des administrateurs. |
+| CAR28  | Haute        |	B12, B21, B22              | Intégration de modèles de pull request (PR) pour standardiser et rationaliser le processus de soumission de code. Cela aidera à garantir que chaque PR est bien documentée et répond aux normes du club avant la fusion. |
+|CAR29   | Haute	      | B12, B21                   | Utilisation de "Code Owners" pour spécifier les responsables de différentes parties du code. Cela garantira que les bonnes personnes sont notifiées pour la revue de chaque PR. |
+| CAR30  | Moyenne      | B12, B20, B21              | Mise en place de guides de contribution pour aider les nouveaux membres ou contributeurs à comprendre comment contribuer correctement au projet. |
+| CAR31  | Moyenne      | B12, B21                   | Utilisation de "Issue Templates" pour standardiser la façon dont les problèmes ou les fonctionnalités sont rapportés, facilitant ainsi leur gestion et leur suivi. | 
+| CAR32  | Facultative  | B21, B22, B23              | Mise en place de *pre-commit-hooks* pour exécuter automatiquement la vérifications à chaque commit du linting ou autres.
 
 ### 5. Contraintes
 
@@ -346,12 +321,14 @@ TODO
 | **ID** | **Contraintes** | **Description** |
 | --- | --- | --- |
 | C01 | Interdiction de stocker des données personelles. | Du aux politiques de protection de données de l'ÉTS, on a jugé qu'il est moins risqué pour le projet de ne jamais stocker des données personelles dans la plateforme cedille. |
+| C02 | Permettre une visibilité complète de notre infrastructure au services des TI | Les services des TI doivent avoir la capacité de surveiller et d'inspecter tous les services et applications déployés sur la plateforme CÉDILLE pour s'assurer qu'ils correspondent strictement aux besoins des clubs et qu'aucun service non lié, comme ceux utilisés pour d'autres activités commerciales, n'est hébergé. Cette exigence découle des problèmes antérieurs rencontrés avec des services non liés déployés sur le réseau de l'école. |
+| C03 | Contrôle d'accès résautique partagé avec le service des TI de l'école | Bien que nous ayons le contrôle sur le routage et la gestion de notre réseau interne grâce à notre routeur, l'accès externe et certaines fonctionnalités du réseau sont strictement contrôlés et gérés par les services TI de l'ÉTS. Toute demande d'accès ou modification du contrôle d'accès externe doit être coordonnée et approuvée par eux. |
 
 ### 6. Attributs de qualité
 
 **Interopérabilité**
 
-AQ1 - TODO
+AQ1 - Le système doit facilement s'intégrer avec des outils tiers tels que des services d'observabilité.
 
 **Performance**
 
@@ -385,12 +362,7 @@ AQ8 – Le système devrait gérer la mise à l'échelle des applications selon 
 
 - On vise à utilisé la norme [ISO 32675:2022](https://www.iso.org/standard/83670.html) comme ligne directrice pour notre infrastructure.
 
-### 7.2 Configuration requise
-
-- TODO
-
-
-### 7.3 Exigences en matière de documentation
+### 7.2 Exigences en matière de documentation
 
 - Architecture Technique : Schémas et explications détaillées de l'architecture des serveurs, du réseau et de la pile technologique.
 - Documentation de la Configuration : Instructions pour la mise en place et la configuration de l'environnement, y compris les serveurs physiques, Kubernetes, et tous les autres outils utilisés.
