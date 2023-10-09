@@ -328,7 +328,7 @@ Cette section énumère les hypothèses et dépendances qui sont essentielles po
 | CAR33  | Importante   | B21, B22, B23              | Mise en place de *pre-commit-hooks* pour exécuter automatiquement la vérifications à chaque commit du linting ou autres.                                                                                                                                                                                                       |
 | CAR34  | Nécessaire   | B05                        | Des environnement devraient être créés lors de Pull Requests pour permettre aux testeurs de valider les changements avant d'accepter ceux-ci                                                                                                                                                                                   |
 | CAR35  | Nécessaire   | B10                        | Documenter un processus post-incident, incluant des gabarits de rapports. Définir le processus de communications aux clubs.                                                                                                                                                                                                    |
-
+| CAR36  | Nécessaire   | B01                        | Mettre en place un gabarit de répertoire à l'aide de github-safe-settings permettant d'automatiser les normes et règles d'un projet selon la cadre appliqué. | 
 ### 5. Contraintes
 
 **Table 5.1 :Contraintes**
