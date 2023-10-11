@@ -38,7 +38,7 @@ Date: 11 octobre 2023
 
 ## 3. Problèmes et défis
 - **Configuration d'un ISO/image dans un PVC pour KubeVirt**: Utiliser un ISO ubuntu dans un PVC pour l'utiliser comme CD-ROM lors du boot de la VM.
-    - **Solution** : Installer le [CDI](https://kubevirt.io/user-guide/operations/containerized_data_importer/) de KubeVirt qui permet d'importer des images disque depuis un serveur web ou un registre de conteneurs, de cloner des volumes persistants existants, et de télécharger des images disquPe locales, le tout vers un DataVolume. Bref, il simplifie et optimise l'utilisation des revendications de volumes persistants (PVCs) comme disques pour les machines virtuelles.
+    - **Solution** : Installer le [CDI](https://kubevirt.io/user-guide/operations/containerized_data_importer/) de KubeVirt qui permet d'importer des images disque depuis un serveur web ou un registre de conteneurs, de cloner des volumes persistants existants, et de télécharger des images disque locales, le tout vers un DataVolume. Bref, il simplifie et optimise l'utilisation des revendications de volumes persistants (PVCs) comme disques pour les machines virtuelles.
 - **Problème 2** : Description détaillée du problème et de son impact.
     - **Solution envisagée** : Description de la solution ou des étapes pour résoudre le problème.
 - **Défi 3** : Description du défi et pourquoi il a été un obstacle.
