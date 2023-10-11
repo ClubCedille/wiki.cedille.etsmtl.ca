@@ -46,15 +46,15 @@ Date: 11 octobre 2023
     - **Solution**: Ré-installation du cluster en spécifiant des identifiants de disque durable (`/dev/disk/by-id/...`) pour *chaque* machine.
 
 - **Configuration d'un ISO/image dans un PVC pour KubeVirt**: Utiliser un ISO ubuntu dans un PVC pour l'utiliser comme CD-ROM lors du boot de la VM.
-    - **Solution** : Installer le [CDI](https://kubevirt.io/user-guide/operations/containerized_data_importer/) de KubeVirt qui permet d'importer des images disque depuis un serveur web ou un registre de conteneurs, de cloner des volumes persistants existants, et de télécharger des images disquPe locales, le tout vers un DataVolume. Bref, il simplifie et optimise l'utilisation des revendications de volumes persistants (PVCs) comme disques pour les machines virtuelles.
-
+    - **Solution** : Installer le [CDI](https://kubevirt.io/user-guide/operations/containerized_data_importer/) de KubeVirt qui permet d'importer des images disque depuis un serveur web ou un registre de conteneurs, de cloner des volumes persistants existants, et de télécharger des images disque locales, le tout vers un DataVolume. Bref, il simplifie et optimise l'utilisation des revendications de volumes persistants (PVCs) comme disques pour les machines virtuelles.
 
 - **Installation initiale de Rook-Ceph** : Installation initiale de rook-ceph (système de fichiers distribué) comme preuve de concept sur notre cluster Kubernetes.
     - **Problème** : Le cluster Ceph est inutilisable
     - **Cause** : La configuration des OSD (Object Storage Daemons) échoue.
-    - **Soluttion** : Manuellement effacer tous les disques et redémarrer l'opérateur rook-ceph.
+    - **Solution** : Manuellement effacer tous les disques et redémarrer l'opérateur rook-ceph.
 
-
+- **Problème 2** : Description détaillée du problème et de son impact.
+    - **Solution envisagée** : Description de la solution ou des étapes pour résoudre le problème.
 - **Défi 3** : Description du défi et pourquoi il a été un obstacle.
     - **Solution envisagée** : Mesures ou étapes pour surmonter ce défi à l'avenir.
 
