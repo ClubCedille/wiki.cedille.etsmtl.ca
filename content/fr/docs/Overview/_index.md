@@ -181,11 +181,11 @@ Les utilisateurs sont toutes les personnes ou entités qui utiliseront ce produi
 
 **Table 3.2.1 : Sommaire des utilisateurs**
 
-| **Name**                                                | **Description**                                                                                                                         | **Responsabilités**                                                                            |
-| ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| **U1** Administrateur de la plateforme                  | Administrateur de la plateforme designé par le club CEDILLE                                                                             | Maintenance de la plateforme et approbation d'un nouveau déploiement.                          |
-| **U2** Les clubs étudiants et ses membres (Utilisateur) | Club étudiant de l'École de Technologie Supérieure                                                                                      | Interagir avec la plateforme pour obtenir diverses informations sur leurs différents services. |
-| **U3** Personnel de l'ETS                               | Régie des clubs étudiants et services TI de l'ÉTS                                                                                       | Vérifier la comformité des applications et de l'infrastructure                                 |
+| **Name**                                                | **Description**                                                                                                                      | **Responsabilités**                                                                            |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| **U1** Administrateur de la plateforme                  | Administrateur de la plateforme designé par le club CEDILLE                                                                          | Maintenance de la plateforme et approbation d'un nouveau déploiement.                          |
+| **U2** Les clubs étudiants et ses membres (Utilisateur) | Club étudiant de l'École de Technologie Supérieure                                                                                   | Interagir avec la plateforme pour obtenir diverses informations sur leurs différents services. |
+| **U3** Personnel de l'ETS                               | Régie des clubs étudiants et services TI de l'ÉTS                                                                                    | Vérifier la comformité des applications et de l'infrastructure                                 |
 | **U4** Développeurs applicatifs                         | Parfois membres de CEDILLE, parfois d'autres clubs, ils sont responsable de la programmation des logiciels présents sur les serveurs |
 
 ### 3.3 Environnement utilisateur
@@ -211,11 +211,11 @@ De plus, les besoins d'administrations sont largement déterminés par les auteu
 la plateforme qui sera mise en place.
 
 **Tableau 3.4.1: Définition des priorité**
-| **Priorité** | **Définition**                                                                                                                       |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Critique     | Ce besoin est essentiel à la réussite du projet. S'il n'est pas comblé le projet serait non-fonctionnel                              |
+| **Priorité** | **Définition**                                                                                                                      |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Critique     | Ce besoin est essentiel à la réussite du projet. S'il n'est pas comblé le projet serait non-fonctionnel                             |
 | Important    | Répondre à ce besoin apporte une valeur substantielle au projet; s'il n'est pas comblé il y aura un impact négatif sur l'expérience |
-| Facultatif   | Si ce besoin n'est pas comblé, l'expérience demeurera postive même si réduite                                                        |
+| Facultatif   | Si ce besoin n'est pas comblé, l'expérience demeurera postive même si réduite                                                       |
 
 **Table 3.4.1: Besoins des principaux utilisateurs**
 
@@ -294,7 +294,7 @@ Cette section énumère les hypothèses et dépendances qui sont essentielles po
 | ------ | ------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | CAR1   | Urgente      | B09                        | 6 serveurs (3 controlplanes, 3 workers) seront déployés pour atteindre la haute disponibilité pour la gestion et pour les applications.                                                                                                                                                                                        |
 | CAR2   | Urgente      | B13, B26                   | Les serveurs utiliseront le système d'exploitation minimal "Talos OS" afin de réduire la surface d'attaque et de faciliter la gestion et les mises à jours du systèmes d'exploitation par un API web sécurisé.                                                                                                                 |
-| CAR3   | Nécessaire   | B01, B16                   | L'infrastructure sera définie *as code* en utilisant terraform. Il s'agira ici des configurations du matériel réseautique ainsi que des serveurs eux-même.                                                                                                                                                                      |
+| CAR3   | Nécessaire   | B01, B16                   | L'infrastructure sera définie *as code* en utilisant terraform. Il s'agira ici des configurations du matériel réseautique ainsi que des serveurs eux-même.                                                                                                                                                                     |
 | CAR4   | Importante   | B02, B03                   | Les serveurs et le routeur utiliseront BGP (MetalLB sur Kubernetes) afin d'avoir de l'équilibrage de charge entre les serveurs.                                                                                                                                                                                                |
 | CAR5   | Urgente      | B18                        | Plusieurs environnements seront logiquement séparés en utilisant vCluster afin de créer des environnements Kubernetes virtuels pour la production, le développement et autres.                                                                                                                                                 |
 | CAR6   | Urgente      | B03                        | Le programme de *reverse-proxy/ingress* Contour sera installé et configuré afin de faire le routage des requêtes HTTP et configurer les certificats HTTPS. Ce systèmes ingress est léger et simple à configurer.                                                                                                               |
@@ -328,7 +328,7 @@ Cette section énumère les hypothèses et dépendances qui sont essentielles po
 | CAR33  | Importante   | B21, B22, B23              | Mise en place de *pre-commit-hooks* pour exécuter automatiquement la vérifications à chaque commit du linting ou autres.                                                                                                                                                                                                       |
 | CAR34  | Nécessaire   | B05                        | Des environnement devraient être créés lors de Pull Requests pour permettre aux testeurs de valider les changements avant d'accepter ceux-ci                                                                                                                                                                                   |
 | CAR35  | Nécessaire   | B10                        | Documenter un processus post-incident, incluant des gabarits de rapports. Définir le processus de communications aux clubs.                                                                                                                                                                                                    |
-| CAR36  | Nécessaire   | B01                        | Mettre en place un gabarit de répertoire à l'aide de github-safe-settings permettant d'automatiser les normes et règles d'un projet selon la cadre appliqué. | 
+| CAR36  | Nécessaire   | B01                        | Mettre en place un gabarit de répertoire à l'aide de github-safe-settings permettant d'automatiser les normes et règles d'un projet selon la cadre appliqué.                                                                                                                                                                   |
 ### 5. Contraintes
 
 **Table 5.1 :Contraintes**
