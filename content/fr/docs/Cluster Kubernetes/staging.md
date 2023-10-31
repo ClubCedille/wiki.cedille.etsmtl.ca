@@ -1,7 +1,7 @@
 ---
 title: Staging
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  L'environnement Staging est utilisé comme environnement de pré-production. Il sert à tester des changements avant qu'ils soient déployés dans l'environnement de production.
 date: 2017-01-05
 weight: 7
 ---

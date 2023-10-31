@@ -1,7 +1,7 @@
 ---
 title: Prod
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  L'environnement Production est utilisé pour héberger les services "live" de la plateforme, dans un état prêt à l'utilisation par les usagers finaux.
 date: 2017-01-05
 weight: 4
 ---

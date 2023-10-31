@@ -1,7 +1,7 @@
 ---
 title: Sandbox
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  Cet environnement est utilisé pour expérimenter librement sur le cluster. Les déploiements dans cet environnement n'ont pas d'objectif de fiabilité et peuvent être ajoutés, modifiés et retirés librement.
 date: 2017-01-05
 weight: 2
 ---
