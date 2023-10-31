@@ -5,13 +5,33 @@ description: >
   Présente tous nos déploiements que l'on héberge
 ---
 
-## Contour
+# Application existantes
+
+## Système
+
+### ArgoCD
+
+ArgoCD est notre système de GitOps. Il s'occupe de déployer et synchronizer toutes les ressources YAML dans notre repértoire `Plateforme-Cedille`. Pour le faire, on utiliser Kustomize pour regrouper toutes les ressources de type `Application` dans le dossier `/apps/argo-apps/`.
+
+Voici un apercu visuel de cette structure:
+
+TODO: Insérer graphique.
+
+### Ingress - Contour
 
 Contour est une solution d'Ingress Controller pour Kubernetes. Elle utilise le serveur proxy Envoy comme back-end.
 
-### Configuration 
+#### Configuration 
 
 Le service proxy de Envoy à été configuré avec un Nodeport pour diriger le traffic externe vers contour qui achemine ensuite les requêtes vers les services dédiés. 
+
+## Workloads
+
+### apps/sample/kustomize-example-app
+
+Application qui démontre la structure de base a prendre pour déployer une nouvelle application avec Kustomize avec des environments prod et staging.
+
+Pour plus de détails, voir: [Déployer des applications](./deploying-workloads)
 
 ### Tester
 
