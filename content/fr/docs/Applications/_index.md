@@ -25,14 +25,6 @@ Contour est une solution d'Ingress Controller pour Kubernetes. Elle utilise le s
 
 Le service proxy de Envoy à été configuré avec un Nodeport pour diriger le traffic externe vers contour qui achemine ensuite les requêtes vers les services dédiés. 
 
-## Workloads
-
-### apps/sample/kustomize-example-app
-
-Application qui démontre la structure de base a prendre pour déployer une nouvelle application avec Kustomize avec des environments prod et staging.
-
-Pour plus de détails, voir: [Déployer des applications](./deploying-workloads)
-
 ### Tester
 
 Commencer par déployer une application web comme [httpbin](https://httpbin.org/#/). À partir du repertoire du projet :
@@ -50,3 +42,12 @@ kubectl -n projectcontour port-forward service/envoy 8888:80
 Puis visiter http://local.projectcontour.io:8888/. Pour notre environnement de production, on utiliserait l'adresse du service de Envoy.
 
 Pour plus d'informations sur Contour, consultez [la documentation officielle](https://projectcontour.io/docs/).
+
+## Workloads
+
+### apps/sample/kustomize-example-app
+
+Application qui démontre la structure de base a prendre pour déployer une nouvelle application avec Kustomize avec des environments prod et staging.
+
+Pour plus de détails, voir: [Déployer des applications](./deploying-workloads)
+
