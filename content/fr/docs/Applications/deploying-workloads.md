@@ -1,8 +1,5 @@
 ---
 title: Déployer des applications
-linkTitle: Déployer des applications
-menu: {main: {weight: 20}}
-weight: 20
 ---
 
 ## Application exemplaire (httpbin)
