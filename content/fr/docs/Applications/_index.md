@@ -41,7 +41,7 @@ Contour est une solution d'Ingress Controller pour Kubernetes. Elle utilise le s
 
 Le service proxy de Envoy à été configuré avec un Nodeport pour diriger le traffic externe vers contour qui achemine ensuite les requêtes vers les services dédiés. 
 
-### Tester
+#### Tester
 
 Commencer par déployer une application web comme [httpbin](https://httpbin.org/#/). À partir du repertoire du projet :
 ```bash
@@ -59,42 +59,72 @@ Puis visiter http://local.projectcontour.io:8888/. Pour notre environnement de p
 
 Pour plus d'informations sur Contour, consultez [la documentation officielle](https://projectcontour.io/docs/).
 
-## Kubevirt
+### Kubevirt
 
 KubeVirt étend les fonctionnalités de Kubernetes en ajoutant des workloads de machines virtuelles à côté des conteneurs.
 
-### Configuration
+#### Configuration
 
 KubeVirt est configuré pour permettre l'exécution et la gestion de machines virtuelles au sein du cluster Kubernetes. Il est nécessaire d'avoir [krew](https://krew.sigs.k8s.io/) installé.
 
-### Tester
+#### Tester
 
 Pour tester une machine virtuelle Ubuntu, exécutez cette commande:
 ```bash
 kubectl virt vnc ubuntu-vm -n vms
 ```
 
-## Grafana
+#### Containerized data importer (CDI)
+
+Pour créer votre propre VM à partir d'un ISO, vous devez utiliser le [CDI](https://kubevirt.io/user-guide/operations/containerized_data_importer/) de Kubevirt qui est déjà installé sur notre cluster.
+
+Pour ce faire, créez un PVC (dans cette situation, l'iso d'ubuntu 22.04.3 va être importé dans le PVC):
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: iso-ubuntu-20-04
+  namespace: vms
+  labels:
+    app: containerized-data-importer
+  annotations:
+    cdi.kubevirt.io/storage.import.endpoint: "https://releases.ubuntu.com/jammy/ubuntu-22.04.3-desktop-amd64.iso" # Required. Format: (http||s3)://www.myUrl.com/path/of/data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 6Gi
+```
+
+Une fois les changements appliqués, un pod sera créé dans le namespace respectif. Dans cette situation, le pod sera créé dans vms. Ce pod permet de voir la progression de l'installation de l'ISO dans le PVC. Pour voir le progrès:
+```bash
+kubectl logs <nom-du-pod> -n vms -f
+```
+
+Lorsque le téléchargement est terminé, vous pouvez créer votre vm basée sur l'ISO que vous venez de télécharger.
+
+### Grafana
 
 Grafana est une plateforme d'analyse et de visualisation de données pour la surveillance des systèmes informatiques.
 
-### Configuration
+#### Configuration
 
 Grafana a été configuré pour collecter, analyser et visualiser les métriques, les logs et les traces des applications de notre infrastructure.
 
-### Tester
+#### Tester
 
 Visiter https://grafana.omni.cedille.club pour voir ce qui a été fait. 
 
-## Clickhouse
+### Clickhouse
 
 Clickhouse est un système de gestion de base de données analytique orienté colonnes, optimisé pour les requêtes rapides.
 
-### Configuration
+#### Configuration
 
 Clickhouse est configuré pour collecter et stocker les métriques ainsi que les journaux (logs) provenant d'OpenTelemetry, contribuant directement à une meilleure observabilité. L'intégration avec Grafana, permet d'exploiter ces données à travers des tableaux de bord interactifs pour un suivi précis des systèmes.
 
-### Tester
+#### Tester
 
 Rendez-vous sur https://grafana.omni.cedille.club. Laissez l'onglet ouvert.
 
@@ -131,15 +161,15 @@ python3 script.py
 
 Par la suite, il sera possible de voir les changements en faisant un ```SELECT * from users;```
 
-## Service Mesh - Kuma
+### Service Mesh - Kuma
 
 Kuma est une plateforme de gestion de services (Service Mesh) conçue pour le microservice et l'orchestration de réseaux.
 
-### Configuration
+#### Configuration
 
 Kuma est configuré pour orchestrer, sécuriser et observer les communications entre les services du cluster Kubernetes. Il y a uniquement un "meshes" qui a été configurer pour le moment (defaut).
 
-### Tester
+#### Tester
 
 Commencez par déployer un exemple de service:
 ```bash
@@ -158,6 +188,13 @@ Finalement, analysez le comportement de Kuma:
 kubectl port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 ```
 Rendez-vous sur http://localhost:5681/gui/.
+
+#### Autres solutions considérées 
+
+Linkerd.
+
+Problème: Complexité d'intégration ou de configuration. Voir https://github.com/linkerd/linkerd2/issues/11156
+
 
 ## Workloads
 
