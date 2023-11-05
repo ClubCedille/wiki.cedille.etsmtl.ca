@@ -17,6 +17,22 @@ Voici un apercu visuel de cette structure:
 
 TODO: Insérer graphique.
 
+#### Configuration 
+**Permissions RBAC**
+La configuration RBAC (Role-Based Access Control) dans ArgoCD permet de définir des politiques de sécurité spécifiques pour différents utilisateurs et groupes. Dans notre cas, nous avons défini des rôles au sein de notre organisation Cedille qui correspondent aux différents niveaux d'accès nécessaires.
+
+Les opérateurs (role:org-operators), qui sont membres du groupe ClubCedille:SRE, ont les permissions suivantes :
+
+Obtenir des informations sur les clusters, certificats et dépôts (repositories).
+Synchroniser, créer et supprimer les applications.
+Lire, créer, mettre à jour et supprimer les clés GPG.
+Ces permissions sont configurées via les lignes commençant par p dans le fichier `system/argocd/argocd-values.yaml` sous `policy.csv`. Le * indique que l'action est autorisée pour toutes les instances de la ressource spécifiée.
+
+Les relations entre les utilisateurs/groupes GitHub et les rôles ArgoCD sont définies par les lignes commençant par g. Par exemple, tous les membres du groupe ClubCedille:SRE sur GitHub sont assignés au rôle role:org-operators dans ArgoCD et ClubCedille:Exec sont assignés au rôle admin.
+
+**Intégration SSO avec GitHub**
+ArgoCD est configuré pour utiliser OAuth2 de GitHub comme fournisseur d'authentification. Cela permet aux membres de notre organisation GitHub de se connecter à ArgoCD avec leurs identifiants GitHub. 
+
 ### Ingress - Contour
 
 Contour est une solution d'Ingress Controller pour Kubernetes. Elle utilise le serveur proxy Envoy comme back-end.
