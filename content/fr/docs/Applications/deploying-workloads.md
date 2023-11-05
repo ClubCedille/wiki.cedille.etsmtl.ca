@@ -4,21 +4,21 @@ title: Déployer des applications
 
 ## Application exemplaire (httpbin)
 
-L'application d'exemple est mise en place afin de documenter la méthodologie qui devrait être utilisé pour déployer des application en production avec Kustomize et ArgoCD.
+L'application d'exemple est mise en place afin de documenter la méthodologie qui devrait être utilisée pour déployer des applications en production avec Kustomize et ArgoCD.
 
 - Code source: [/apps/samples/kustomize-example-app](https://github.com/ClubCedille/Plateforme-Cedille/tree/master/apps/samples/kustomize-example-app)
 
 ## Survol des étapes a suivre pour déployer une nouvelle app:
 
-1. Creation d'un dossier pour l'application. Ex: `/apps/new-app`
-2. Creation de l'arborecence de ressources décrite dans ce document
+1. Création d'un dossier pour l'application. Ex.: `/apps/new-app`
+2. Création de l'arborescence de ressources décrite dans ce document
 3. Ajout d'une référence vers la nouvelle application dans l'application de haut niveau `/apps/argo-apps/kustomization.yaml` 
 
 ## Fonctionnement avec Kustomize
 
 ### Base
 
-Chaque application devrait definir un dossier `base` qui contient toutes les ressources Kubernetes que l'application aurait besoin. Ce dossier doit aussi contenir un Kustomization qui pointe sur toute les fichiers Kubernetes de `base`:
+Chaque application devrait définir un dossier `base` qui contient toutes les ressources Kubernetes que l'application aurait besoin. Ce dossier doit aussi contenir un Kustomization qui pointe sur toute les fichiers Kubernetes de `base`:
 ```yaml
 # base/Kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -31,7 +31,7 @@ resources:
 
 ### Envrionments
 
-Ensuite, il faut définir les dossiers `prod` et `staging` qui auront comme objectif de modifier des propriétés dans `base` selon les besoins différents et d'ajouter des ressources qui ne seront pas communs a toutes les environments.
+Ensuite, il faut définir les dossiers `prod` et `staging` qui auront comme objectif de modifier des propriétés dans `base` selon les besoins différents et d'ajouter des ressources qui ne seront pas communes a tous les environnements.
 
 Par exemple, voici le fonctionnement pour `prod`:
 ```yaml
@@ -68,14 +68,14 @@ Dans l'extrait ci-haut:
 # On peut mettre d'autres patches avec des séparateurs ---
 ---
 ```
-On voit qu'ici on applique des requêtes de ressources qui seront différents de `base`
+On voit qu'ici on applique des requêtes de ressources qui seront différentes de `base`
 
 ### Ajout de la nouvelle application dans /argo-apps
 
 Créer les fichiers suivants dans votre répertoire d'application:
 
 ```yaml
-# argo.yaml : Contient la resource ArgoCD "Application" pour votre application
+# argo.yaml : Contiens la ressource ArgoCD "Application" pour votre application
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -90,7 +90,7 @@ spec:
     namespace: kustomize-example-app-prod
   source:
     repoURL: https://github.com/ClubCedille/Plateforme-Cedille
-    path: apps/samples/kustomize-example-app/prod # On pointe ArgoCD vers notre sous répertoire pour l'environment prod
+    path: apps/samples/kustomize-example-app/prod # On pointe ArgoCD vers notre sous-répertoire pour l'environment prod
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
@@ -110,7 +110,7 @@ spec:
     namespace: kustomize-example-app-staging
   source:
     repoURL: https://github.com/ClubCedille/Plateforme-Cedille
-    path: apps/samples/kustomize-example-app/staging # On pointe ArgoCD vers notre sous répertoire pour l'environment staging
+    path: apps/samples/kustomize-example-app/staging # On pointe ArgoCD vers notre sous-répertoire pour l'environnement staging
     targetRevision: HEAD 
   syncPolicy:
     syncOptions:
@@ -118,7 +118,7 @@ spec:
 ```
 
 ```yaml
-# kustomization.yaml : Kustomization qui contient une seule réference vers le argo.yaml ci haut
+# kustomization.yaml : Kustomization qui contient une seule référence vers le argo.yaml ci-haut
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -142,9 +142,11 @@ resources:
 
 ### Structure Globale
 
+**Fichiers et Ressources**
 ```
-$ kustomize cfg tree .
-──── base
+  [argo.yaml] : ArgoCD Application
+  [kustomization.yaml] : Pointeur vers argo.yaml
+  ── base
   │  ├── [deployment.yaml]  Deployment httpbin
   │  ├── [kustomization.yaml]  Kustomization
   │  └── [network.yaml]  Service httpbin
@@ -159,3 +161,6 @@ $ kustomize cfg tree .
       ├── [kustomization.yaml]  Kustomization
       └── [patch.yaml]  Deployment httpbin
 ```
+
+**Aperçu dans ArgoCD**
+![Apperçu dans ArgoCD](/docs/applications/argocd-kustomize-example-app.png)
