@@ -11,6 +11,12 @@ L'application d'exemple est mise en place afin de documenter la méthodologie qu
 
 - Code source: [/apps/samples/kustomize-example-app](https://github.com/ClubCedille/Plateforme-Cedille/tree/master/apps/samples/kustomize-example-app)
 
+## Survol des étapes a suivre pour déployer une nouvelle app:
+
+1. Creation d'un dossier pour l'application. Ex: `/apps/new-app`
+2. Creation de l'arborecence de ressources décrite dans ce document
+3. Ajout d'une référence vers la nouvelle application dans l'application de haut niveau `/apps/argo-apps/kustomization.yaml` 
+
 ## Fonctionnement avec Kustomize
 
 ### Base
@@ -66,6 +72,76 @@ Dans l'extrait ci-haut:
 ---
 ```
 On voit qu'ici on applique des requêtes de ressources qui seront différents de `base`
+
+### Ajout de la nouvelle application dans /argo-apps
+
+Créer les fichiers suivants dans votre répertoire d'application:
+
+```yaml
+# argo.yaml : Contient la resource ArgoCD "Application" pour votre application
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kustomize-example-app-prod
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kustomize-example-app-prod
+  source:
+    repoURL: https://github.com/ClubCedille/Plateforme-Cedille
+    path: apps/samples/kustomize-example-app/prod # On pointe ArgoCD vers notre sous répertoire pour l'environment prod
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kustomize-example-app-staging
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kustomize-example-app-staging
+  source:
+    repoURL: https://github.com/ClubCedille/Plateforme-Cedille
+    path: apps/samples/kustomize-example-app/staging # On pointe ArgoCD vers notre sous répertoire pour l'environment staging
+    targetRevision: HEAD 
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+```
+
+```yaml
+# kustomization.yaml : Kustomization qui contient une seule réference vers le argo.yaml ci haut
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+ - argo.yaml
+```
+
+Finalement, on peut modifier le fichier `/apps/argo-apps/kustomization.yaml` pour inclure notre nouvelle application:
+
+```yaml
+# /apps/argo-apps/kustomization.yaml
+kind: Kustomization
+
+resources:
+  # System
+  - ../../system/crossplane/
+  - ../../system/grafana/
+  # Workload
+  - ../samples/kustomize-example-app/ # Ajout de la nouvelle application.
+```
 
 ### Structure Globale
 
