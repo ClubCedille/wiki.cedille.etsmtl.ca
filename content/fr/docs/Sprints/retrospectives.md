@@ -14,4 +14,6 @@ Les rétrospectives sont essentielles pour comprendre les réalisations, les dé
 
 
 1. [Rétrospective du Sprint 1](/docs/sprints/retrospective-1/) - 11 octobre 2023
+1. [Rétrospective du Sprint 2](/docs/sprints/retrospective-2/) - 8 novembre 2023
+
 ---
