@@ -60,7 +60,7 @@ Date: 8 novembre 2023
 
 ### 2.3 À faire
 
-- **[Deployer cluster staging (vcluster) #6](https://github.com/ClubCedille/Plateforme-Cedille/issues/6)** & **[Deployer cluster sandbox (vcluster) #7](https://github.com/ClubCedille/Plateforme-Cedille/issues/7) : Le déploiement du cluster de staging et sandbox avec vcluster est prévu.
+- **[Deployer cluster staging (vcluster) #6](https://github.com/ClubCedille/Plateforme-Cedille/issues/6)** & **[Deployer cluster sandbox (vcluster) #7](https://github.com/ClubCedille/Plateforme-Cedille/issues/7)** : Le déploiement du cluster de staging et sandbox avec vcluster est prévu.
 - **[Documenter le déploiement avec Omni #17](https://github.com/ClubCedille/Plateforme-Cedille/issues/17)** : La documentation du processus de déploiement en utilisant Omni doit être créée.
 - **[Documenter la configuration d'environnement locale avec Omni #19](https://github.com/ClubCedille/Plateforme-Cedille/issues/19)** : Il est nécessaire de documenter la configuration de l'environnement local pour Omni.
 - **[Configuration des routes sur Talos #0](https://github.com/orgs/ClubCedille/projects/3/views/5?pane=issue&itemId=41582552)** : La configuration des routes pour le système d'exploitation Talos doit être mise en place.
