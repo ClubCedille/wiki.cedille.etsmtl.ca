@@ -81,5 +81,7 @@ Date: 8 novembre 2023
 - **Défi 1** : External-DNS
   - **Solution** : TODO
 
-- **Défi 2** : Configuration de ArgoCD sans secret manager. (todo expliquer problème réccurent lors de la recréation du pod)
-  - **Solution** : TODO
+- **Défi 2** : Configuration du SSO pour ArgoCD sans gestion sécurisée des secrets. Nous avons rencontré un problème récurrent lors de la recréation des pods d'ArgoCD où les secrets nécessaires à la configuration du SSO ne pouvaient pas être conservés de manière sécurisée. La configuration initiale a été effectuée en utilisant le fichier `values` d'un Helm chart, incluant un token secret provenant de GitHub pour permettre l'authentification. Cependant, cela posait un problème de sécurité puisque le secret se retrouvait exposé sur GitHub lorsque le fichier `values` était sauvegardé. De plus, le secret devait être saisi à nouveau via `kubectl` à chaque fois que le namespace était recréé pour des raisons de débogage, ce qui ajoutait des tâches répétitives et fastidieuses à notre travail.
+  
+  - **Solution proposée** : Pour résoudre ce problème,  nous devons configuré le service Vault par HashiCorp, qui permettra de centraliser la gestion des secrets et de les injecter de manière sécurisée dans nos configurations sans les exposer dans notre dépôt GitHub. Cela réduirait considérablement les risques liés à la sécurité et optimiserait notre flux de travail en évitant la resaisie manuelle des secrets à chaque intervention sur l'infrastructure.
+
