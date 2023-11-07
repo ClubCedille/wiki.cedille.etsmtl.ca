@@ -27,8 +27,10 @@ Date: [Date de la réunion]
 ## 3. Problèmes et défis
 
 - **Problème 1** : Description détaillée du problème et de son impact.
-  - **Solution envisagée** : Description de la solution ou des étapes pour résoudre le problème.
+  - **Cause** : Desription de la cause du problème
+  - **Solution** : Description de la solution ou des étapes pour résoudre le problème.
+
 - **Défi 2** : Description du défi et pourquoi il a été un obstacle.
-  - **Solution envisagée** : Mesures ou étapes pour surmonter ce défi à l'avenir.
+  - **Solution** : Mesures ou étapes pour surmonter ce défi à l'avenir.
 
 ---

@@ -70,7 +70,16 @@ Date: 8 novembre 2023
 
 ## 3. Problèmes et défis
 
-- **Problème 1** : Description détaillée du problème et de son impact.
-  - **Solution envisagée** : Description de la solution ou des étapes pour résoudre le problème.
-- **Défi 2** : Description du défi et pourquoi il a été un obstacle.
-  - **Solution envisagée** : Mesures ou étapes pour surmonter ce défi à l'avenir.
+- **Problème 1** : Stabilité de Rook/Ceph. Le redémarrage d'un node rend le cluster ceph non-healthy. Les pods de ceph sur le serveurs associé ne finissent jamais leur processus de démarrage et ces disques ne sont jamais disponible.
+  - **Cause** : Le problème semble être du au fait qu'un nouveau mon est créé puisque celui du node redémarré est mort. Puisqu'on ne permet pas la colocation de mon, il ne redémarre sur aucun autre serveur. Quand on redémarre sur le serveur on dirait que le nouveau et ancien mon se font compétition. Après une investigation approfondie, du au petit scale du cluster ceph (3 nodes), il semble y avoir une complexité et risque additionel.
+  - **Solution** : Nous avons décidé que résoudre tous ces problèmes est trop de problèmes. Après une rapide preuve de concept, nous avons décidé de changer vers [Mayastor](https://openebs.io/docs/concepts/mayastor). Ce système est bati pour kubernetes à partir de 0, ce qui devrait réduire le genre de problèmes opérationnels rencontrés avec ceph. Voir #33 pour plus de détails.
+
+- **Problème 2** : Configuration d'un service mesh pour kubernetes
+  - **Cause** : TODO
+  - **Solution** : TODO
+
+- **Défi 1** : External-DNS
+  - **Solution** : TODO
+
+- **Défi 2** : Configuration de ArgoCD sans secret manager. (todo expliquer problème réccurent lors de la recréation du pod)
+  - **Solution** : TODO
