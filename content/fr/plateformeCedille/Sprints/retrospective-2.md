@@ -78,8 +78,9 @@ Date: 8 novembre 2023
   - **Cause** : TODO
   - **Solution** : TODO
 
-- **Défi 1** : External-DNS
-  - **Solution** : TODO
+- **Problème 3** : **Installation et configuration du service External-DNS** : Le service a été installé selon les instructions, cependant il ne marche pas et offre peu de détails sur l'erreur.
+  - **Cause** : La cause n'a pas été identifiée pour le moment.
+  - **Solution** : Il est possible qu'on fasse quelques enquêtes de plus pour faire fonctionner le service. On est aussi en train de regarder des solutions alternatives comme: Gestion du DNS avec crossplane et/ou migration du DNS vers Google Cloud.
 
 - **Défi 2** : Configuration du SSO pour ArgoCD sans gestion sécurisée des secrets. Nous avons rencontré un problème récurrent lors de la recréation des pods d'ArgoCD où les secrets nécessaires à la configuration du SSO ne pouvaient pas être conservés de manière sécurisée. La configuration initiale a été effectuée en utilisant le fichier `values` d'un Helm chart, incluant un token secret provenant de GitHub pour permettre l'authentification. Cependant, cela posait un problème de sécurité puisque le secret se retrouvait exposé sur GitHub lorsque le fichier `values` était sauvegardé. De plus, le secret devait être saisi à nouveau via `kubectl` à chaque fois que le namespace était recréé pour des raisons de débogage, ce qui ajoutait des tâches répétitives et fastidieuses à notre travail.
   
