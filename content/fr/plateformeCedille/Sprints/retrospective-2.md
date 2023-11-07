@@ -1,9 +1,8 @@
 ---
 title: Rétrospective 2
-date: 2023-11-08
-toc_hide: true
+#date: 2023-11-08
 hide_summary: true
-type: "docs"
+toc_hide: true
 ---
 ## Rétrospective de l'itération 2
 
@@ -86,3 +85,4 @@ Date: 8 novembre 2023
   
   - **Solution proposée** : Pour résoudre ce problème,  nous devons configuré le service Vault par HashiCorp, qui permettra de centraliser la gestion des secrets et de les injecter de manière sécurisée dans nos configurations sans les exposer dans notre dépôt GitHub. Cela réduirait considérablement les risques liés à la sécurité et optimiserait notre flux de travail en évitant la resaisie manuelle des secrets à chaque intervention sur l'infrastructure.
 
+---

@@ -13,8 +13,8 @@ Les rétrospectives sont essentielles pour comprendre les réalisations, les dé
 
 ## Liste des Rétrospectives
 
-
 1. [Rétrospective du Sprint 1](/plateformecedille/sprints/retrospective-1/) - 11 octobre 2023
-1. [Rétrospective du Sprint 2](/plateformecedille/sprints/retrospective-2/) - 8 novembre 2023
+2. [Rétrospective du Sprint 2](/plateformecedille/sprints/retrospective-2/) - 8 novembre 2023
 
 ---
+ 
