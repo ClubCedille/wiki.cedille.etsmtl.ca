@@ -12,30 +12,23 @@ Date: 8 novembre 2023
 
 | Tâche                                                                                                                                              | Responsable                     |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| [Deployer cluster staging (vcluster)](https://github.com/ClubCedille/Plateforme-Cedille/issues/6)                                                  | Antoine                         |
 | [Deployer cluster sandbox (vcluster)](https://github.com/ClubCedille/Plateforme-Cedille/issues/7)                                                  | Antoine                         |
 | [Installation/Configuration de k8s-sigs/external-dns dans le cluster](https://github.com/ClubCedille/Plateforme-Cedille/issues/35)                 | Michael                         |
 | [Deployer/Configurer Hashicorp Vault](https://github.com/ClubCedille/Plateforme-Cedille/issues/14)                                                 | Simon                           |
 | [Déploiement de cert-manager (ou équivalent) dans le système](https://github.com/ClubCedille/Plateforme-Cedille/issues/26)                         | Antoine                         |
-| [Acheter SSDs](https://github.com/ClubCedille/Plateforme-Cedille/issues/9)                                                                         | Thomas                          |
 | [Installation/Configuration de Crossplane sur le cluster](https://github.com/ClubCedille/Plateforme-Cedille/issues/31)                             | Michael                         |
 | [Creation de la structure Kustomize](https://github.com/ClubCedille/Plateforme-Cedille/issues/25)                                                  | Michael                         |
 | [Configurer ArgoCD sur le cluster](https://github.com/ClubCedille/Plateforme-Cedille/issues/5)                                                     | Henri, Antoine, Simon, Jonathan |
 | [Configuration de Contour (reverse-proxy/ingress)](https://github.com/ClubCedille/Plateforme-Cedille/issues/11)                                    | Jonathan                        |
 | [Gabarit de pull request (PR) pour le repo Plateforme Cedille](https://github.com/orgs/ClubCedille/projects/3/views/5?pane=issue&itemId=41043072)  | Henri                           |
 | [Gabarit de issues pour le repo Plateforme Cedille](https://github.com/orgs/ClubCedille/projects/3/views/5?pane=issue&itemId=41043078)             | Henri                           |
-| [Configurer la gestion a distance des serveurs physiques](https://github.com/ClubCedille/Plateforme-Cedille/issues/16)                             |                                 |
-| [Documenter le déploiement avec Omni](https://github.com/ClubCedille/Plateforme-Cedille/issues/17)                                                 |                                 |
-| [Documenter la configuration d'environnement locale avec Omni](https://github.com/ClubCedille/Plateforme-Cedille/issues/19)                        | Jonathan                        |
 | [Deployer/Configurer Kuma + Merbridge (service-mesh)](https://github.com/ClubCedille/Plateforme-Cedille/issues/20)                                 | Thomas                          |
 | [Configurer/Deployer grafana](https://github.com/ClubCedille/Plateforme-Cedille/issues/21)                                                         | Thomas                          |
-| [Configuration des routes sur Talos](https://github.com/orgs/ClubCedille/projects/3/views/5?pane=issue&itemId=41582552)                            |                                 |
 | [Configurer et deployer Gateway API](https://github.com/ClubCedille/Plateforme-Cedille/issues/27)                                                  | Thomas                          |
-| [Deployer et configurer Mayastor](https://github.com/ClubCedille/Plateforme-Cedille/issues/33)                                                     |                                 |
+| [Deployer et configurer Mayastor](https://github.com/ClubCedille/Plateforme-Cedille/issues/33)                                                     | Simon                           |
 | [Documenter KubeVirt](https://github.com/ClubCedille/Plateforme-Cedille/issues/28)                                                                 | Thomas                          |
 | [Documenter Kuma et Merbridge](https://github.com/ClubCedille/Plateforme-Cedille/issues/29)                                                        | Thomas                          |
 | [Documenter Contour](https://github.com/ClubCedille/Plateforme-Cedille/issues/30)                                                                  | Jonathan                        |
-| [Résoudre les problèmes de stabilité Rook/Ceph](https://github.com/ClubCedille/Plateforme-Cedille/issues/34)                                       |                                 |
 | [clickhouse operator with sample application](https://github.com/ClubCedille/Plateforme-Cedille/issues/37)                                         | Thomas                          |
 | [Configure argocd-lovely-plugin](https://github.com/ClubCedille/Plateforme-Cedille/issues/42)                                                      | Simon                           |
 | [Configurer/Deployer clickhouse](https://github.com/ClubCedille/Plateforme-Cedille/issues/58)                                                      | Thomas                          |
@@ -43,6 +36,7 @@ Date: 8 novembre 2023
 | [Configure RBAC for grafana and argoCD](https://github.com/ClubCedille/Plateforme-Cedille/issues/61)                                               | Jonathan                        |
 | [Configure SSO for argocd and grafana](https://github.com/ClubCedille/Plateforme-Cedille/issues/62)                                                | Jonathan                        |
 | [Configurer/Deployer Linkerd](https://github.com/ClubCedille/Plateforme-Cedille/issues/32)                                                         | Thomas                          |
+| [Configurer vault avec l'Operateur de Red Hat](https://github.com/ClubCedille/Plateforme-Cedille/issues/65)                                        | Simon                           |
 
 ---
 
@@ -51,12 +45,12 @@ Date: 8 novembre 2023
 ### 2.1 En cours
 
 - **[Configurer et deployer Gateway API #27](https://github.com/ClubCedille/Plateforme-Cedille/issues/27)** : La configuration de la Gateway API est actuellement en développement.
-- **[Déployer et configurer Mayastor #33](https://github.com/ClubCedille/Plateforme-Cedille/issues/33)** : L'intégration de Mayastor pour le stockage est en cours de déploiement.
 - **[Configurer OTEL #60](https://github.com/ClubCedille/Plateforme-Cedille/issues/60)** : La configuration de l'OpenTelemetry Collector est en cours pour permettre la collecte et l'exportation des données de télémétrie.
 
 ### 2.2 Ne sera pas fait
 
 - **[Configurer/Deployer Linkerd #32](https://github.com/ClubCedille/Plateforme-Cedille/issues/32)** : Nous avons choisi de ne pas aller de l'avant avec Linkerd en tant que maillage de service pour le moment. Nous avons rencontrés des problèmes similaires à des issues ouvertes sur ce projet ([11156](https://github.com/linkerd/linkerd2/issues/11156) & [10994](https://github.com/linkerd/linkerd2/issues/10994)). Sans solution proposé, ont a decidé de se diriger vers une alternative (Kuma).
+- **[Résoudre les problèmes de stabilité Rook/Ceph](https://github.com/ClubCedille/Plateforme-Cedille/issues/34)** : Les problèmes récurrents de stabilité avec ceph ne semblait pas se résoudre. Possiblement du au fait que le logiciel est concu pour beaucoup plus de serevurs et disques. Nous avons plutôt décidé d'utiliser Mayastor, qui est beaucoup plus stable pour nous (voir [Deployer et configurer Mayastor](https://github.com/ClubCedille/Plateforme-Cedille/issues/33))
 
 ### 2.3 À faire
 
@@ -65,6 +59,8 @@ Date: 8 novembre 2023
 - **[Documenter la configuration d'environnement locale avec Omni #19](https://github.com/ClubCedille/Plateforme-Cedille/issues/19)** : Il est nécessaire de documenter la configuration de l'environnement local pour Omni.
 - **[Configuration des routes sur Talos #0](https://github.com/orgs/ClubCedille/projects/3/views/5?pane=issue&itemId=41582552)** : La configuration des routes pour le système d'exploitation Talos doit être mise en place.
 - **[Configurer la gestion à distance des serveurs physiques #16](https://github.com/ClubCedille/Plateforme-Cedille/issues/16)** : Pour permettre à l'équipe d'intéragir avec les serveurs à distance.
+- **[Acheter SSDs](https://github.com/ClubCedille/Plateforme-Cedille/issues/9)**
+
 
 ---
 
@@ -82,8 +78,17 @@ Date: 8 novembre 2023
   - **Cause** : La cause n'a pas été identifiée pour le moment.
   - **Solution** : Il est possible qu'on fasse quelques enquêtes de plus pour faire fonctionner le service. On est aussi en train de regarder des solutions alternatives comme: Gestion du DNS avec crossplane et/ou migration du DNS vers Google Cloud.
 
-- **Défi 2** : Configuration du SSO pour ArgoCD sans gestion sécurisée des secrets. Nous avons rencontré un problème récurrent lors de la recréation des pods d'ArgoCD où les secrets nécessaires à la configuration du SSO ne pouvaient pas être conservés de manière sécurisée. La configuration initiale a été effectuée en utilisant le fichier `values` d'un Helm chart, incluant un token secret provenant de GitHub pour permettre l'authentification. Cependant, cela posait un problème de sécurité puisque le secret se retrouvait exposé sur GitHub lorsque le fichier `values` était sauvegardé. De plus, le secret devait être saisi à nouveau via `kubectl` à chaque fois que le namespace était recréé pour des raisons de débogage, ce qui ajoutait des tâches répétitives et fastidieuses à notre travail.
-  
-  - **Solution proposée** : Pour résoudre ce problème,  nous devons configuré le service Vault par HashiCorp, qui permettra de centraliser la gestion des secrets et de les injecter de manière sécurisée dans nos configurations sans les exposer dans notre dépôt GitHub. Cela réduirait considérablement les risques liés à la sécurité et optimiserait notre flux de travail en évitant la resaisie manuelle des secrets à chaque intervention sur l'infrastructure.
+- **Problème 4** : Configuration du SSO pour ArgoCD sans gestion sécurisée des secrets. Nous avons rencontré un problème récurrent lors de la recréation des pods d'ArgoCD où les secrets nécessaires à la configuration du SSO ne pouvaient pas être conservés de manière sécurisée. La configuration initiale a été effectuée en utilisant le fichier `values` d'un Helm chart, incluant un token secret provenant de GitHub pour permettre l'authentification. Cependant, cela posait un problème de sécurité puisque le secret se retrouvait exposé sur GitHub lorsque le fichier `values` était sauvegardé. De plus, le secret devait être saisi à nouveau via `kubectl` à chaque fois que le namespace était recréé pour des raisons de débogage, ce qui ajoutait des tâches répétitives et fastidieuses à notre travail.
+  - **Solution** : Pour résoudre ce problème,  nous devons configuré le service Vault par HashiCorp, qui permettra de centraliser la gestion des secrets et de les injecter de manière sécurisée dans nos configurations sans les exposer dans notre dépôt GitHub. Cela réduirait considérablement les risques liés à la sécurité et optimiserait notre flux de travail en évitant la resaisie manuelle des secrets à chaque intervention sur l'infrastructure.
+
+- **Problème 5**: Le *bootstrapping* de Hashicorp Vault demandait beaucoup d'étapes manuelles, notamment la génération de certificats TLS.
+  - **Cause**: Un déploiement demande plusieurs étapes qui étaient difficiles à connecter ensemble de facon automatiser:
+    1. Générer des certificats
+    2. Configurer google cloud KMS pour unseal
+    3. Générer une configuration Helm de Vault
+    4. Déployer avec Helm
+    5. Initialiser Vault
+    6. Créer manuellement l'authentification Kubernetes
+  - **Solution**: En utilisant des fonctionnalité de terraform permettant de rouler des commandes manuelles sur le client, nous avons réussi à automatiser plusieurs des opérations qui ne s'automatisais pas facilement avec terraform. La solution est un peu complexe et moins "propre" mais elle fonctionne bien. Nous avons aussi décidé que la fin du process terraform est la génération d'un fichier values.yaml qui est commit sur le répertoire git afin de configurer le déploiement Helm de Vault. Enfin, il reste certaines étapes manuelles, mais elles sont minimes et seront bien documenté à l'itération 3.
 
 ---
