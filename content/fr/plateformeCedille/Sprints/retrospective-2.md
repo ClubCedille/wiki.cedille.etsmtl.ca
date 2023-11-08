@@ -71,8 +71,8 @@ Date: 8 novembre 2023
   - **Solution** : Nous avons décidé que résoudre tous ces problèmes est trop de problèmes. Après une rapide preuve de concept, nous avons décidé de changer vers [Mayastor](https://openebs.io/docs/concepts/mayastor). Ce système est bati pour kubernetes à partir de 0, ce qui devrait réduire le genre de problèmes opérationnels rencontrés avec ceph. Voir #33 pour plus de détails.
 
 - **Problème 2** : Configuration d'un service mesh pour kubernetes
-  - **Cause** : TODO
-  - **Solution** : TODO
+  - **Cause** : La nécessité de prendre en charge mTLS dans le cadre de la configuration du service mesh. Le choix du service mesh doit aussi supporter Gateway API.
+  - **Solution** : Nous avions prévu d'installer Linkerd comme service mesh, mais nous avons été confrontés à un problème lié à l'erreur [#11156](https://github.com/linkerd/linkerd2/issues/11156), qui n'était pas résolu au moment de notre installation. Face à cette difficulté, nous avons choisi de nous orienter vers Kuma, qui prend également en charge la Gateway API et offre la gestion du mTLS nécessaire pour nos besoins.
 
 - **Problème 3** : **Installation et configuration du service External-DNS** : Le service a été installé selon les instructions, cependant il ne marche pas et offre peu de détails sur l'erreur.
   - **Cause** : La cause n'a pas été identifiée pour le moment.
