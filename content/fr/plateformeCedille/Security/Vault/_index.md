@@ -33,7 +33,7 @@ En résumé, HashiCorp Vault offre une solution robuste et flexible pour la gest
 
 ## Architecture
 
-![Architecture Vault](vault.drawio.svg)
+![Architecture Vault](./vault.drawio.svg)
 
 
 ## Comment déployer
