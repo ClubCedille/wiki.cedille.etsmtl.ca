@@ -190,6 +190,12 @@ kubectl port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 ```
 Rendez-vous sur http://localhost:5681/gui/.
 
+#### Merbridge
+
+Merbridge peut être utilisé avec Kuma pour accélérer le routage du trafic réseau entre les pods en utilisant eBPF, ce qui permet de contourner kube-proxy pour des performances améliorées. Lorsqu'il est intégré à Kuma, Merbridge facilite une communication inter-pods plus rapide et plus efficace, en se synchronisant avec les fonctionnalités de gestion de Kuma. La configuration de Merbridge se fait à l'installation de Kuma pour une amélioration directe du débit et de la latence réseau.
+
+Pour tester Merbridge, il faut simplement vérifier que les pods continuent de communiquer au sein du service mesh après son intégration.
+
 #### Autres solutions considérées 
 
 Linkerd.
