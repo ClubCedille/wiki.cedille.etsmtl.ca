@@ -3,11 +3,11 @@ title: Wiki Cedille
 ---
 
 {{< blocks/cover title="Welcome to the official documentation for the club CEDILLE" image_anchor="top" height="full" >}}
-<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/">
-  Learn More <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+<a class="btn btn-lg btn-primary me-3 mb-4" href="/en/cedilleplatform/">
+  Learn more <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://github.com/clubcedille/wiki.etsmtl.ca">
-  Download <i class="fab fa-github ms-2 "></i>
+<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://github.com/clubcedille/">
+  Github <i class="fab fa-github ms-2 "></i>
 </a>
 <p class="lead mt-5">Club d’expérimentation DevOps et d’intégration de logiciels libres de l'ÉTS!</p>
 {{< blocks/link-down color="info" >}}
