@@ -10,6 +10,49 @@ type: "docs"
 
 ## Système
 
+### Mayastor
+
+#### Description de la configuration actuelle
+
+Mayastor est un système de stockage en blocs distribué implémenté avec le protocole NVMEoF. Entre autres, il permet l'accès et la réplication des données sur tous les noeuds du cluster Kubernetes.
+
+En ce moment, on maintient deux copies de toute donnée en tout temps:
+
+```yaml
+# /system/mayastor/storageclass.yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: mayastor
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+parameters:
+  ioTimeout: "30"
+  protocol: nvmf
+  repl: "2"
+  stsAffinityGroup: 'true'
+provisioner: io.openebs.csi-mayastor
+```
+
+##### Justification du choix
+
+Comparé a d'autre solutions comme Ceph:
+
+- est très simple a déployer et configurer
+- à une basse complexité de son système et ses composantes
+- est concu dès le debut pour l'utilisation dans Kubernetes
+
+Par exemple, on a fait plusieurs tentatives d'installation de Ceph, mais le système n'était pas stable pour la petite taille de cluster et était très mal-adapté pour l'utilisation dans Kubernetes.
+
+##### References utilisés pour le déploiement
+
+- https://www.talos.dev/v1.5/kubernetes-guides/configuration/storage/#mayastor
+- https://mayastor.gitbook.io/introduction/quickstart/deploy-mayastor
+
+#### Utilisation
+
+Le `StorageClass` mayastor est selectionné par défault par Kubernetes. Il suffit de créer des `PersitentVolumeClaims` (https://kubernetes.io/docs/concepts/storage/persistent-volumes) et les volumes seront crées dans Mayastore automatiquement.
+
 ### ArgoCD
 
 ArgoCD est notre système de GitOps. Il s'occupe de déployer et synchronizer toutes les ressources YAML dans notre repértoire `Plateforme-Cedille`. Pour le faire, on utiliser Kustomize pour regrouper toutes les ressources de type `Application` dans le dossier `/apps/argo-apps/`.
