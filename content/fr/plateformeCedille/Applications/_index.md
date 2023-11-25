@@ -14,7 +14,7 @@ type: "docs"
 
 #### Description de la configuration actuelle
 
-Mayastor est un système de stockage en blocs distribuée implémenté avec le protocole NVMEoF. Entre autres, il permet l'accès et la réplication des donées sur tout les noeuds du cluster Kubernetes.
+Mayastor est un système de stockage en blocs distribué implémenté avec le protocole NVMEoF. Entre autres, il permet l'accès et la réplication des données sur tous les noeuds du cluster Kubernetes.
 
 En ce moment, on maintient deux copies de toute donnée en tout temps:
 
