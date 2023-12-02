@@ -36,7 +36,7 @@ provisioner: io.openebs.csi-mayastor
 
 ##### Justification du choix
 
-Comparé a d'autre solutions comme Ceph:
+Comparé a d'autre solutions comme Ceph, Mayastor
 
 - est très simple a déployer et configurer
 - à une basse complexité de son système et ses composantes
