@@ -6,4 +6,3 @@ weight: 6
 type: "docs"
 ---
 
-- [Gestion des secrets avec Vault](./vault.md)
