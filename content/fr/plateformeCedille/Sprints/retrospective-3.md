@@ -34,6 +34,7 @@ Date: 6 décembre 2023
 
 - **[Déploiement de cert-manager (ou equiv) dans le ns système](https://github.com/ClubCedille/Plateforme-Cedille/issues/26)** : 
 - **[Documenter Vault](https://github.com/ClubCedille/Plateforme-Cedille/issues/69)** : 
+- **[Intgration des vclusters avec ArgoCD](https://github.com/ClubCedille/Plateforme-Cedille/pull/129)** : Michael
 
 ### 2.2 Ne sera pas fait
 
@@ -57,4 +58,8 @@ Date: 6 décembre 2023
   Calidum-rotae et provient du service API qui est déployé sur un autre cluster kubernetes.
   - **Solution** : Configuration d'une webhook discord directement avec l'application au lieu du service API comme solution temporaire jusqu'à temps que le problème de réception de requêtes soit régler avec l'API.
 
+- **Problème 2** : (Tâche en cours) Impossibilité d'enregistrer les clusters virtuels (VCluster) dans ArgoCD de manière sécuritaire.
+  - **Cause** : Malgré le fait que VCluster est supporté officiellement par ArgoCD, l'intégration n'a pas été conçue pour accéder à des VClusters qui sont privés.
+  - **Solution 1** : (Échoué) Une procédure complexe avec plusieurs scripts bash a été essayée afin d'exécuter tout le processus d'enregistrement à l'intérieur du réseau du cluster vs. le faire sur un poste développeur.
+  - **Solution 2** : (À essayer) Une meilleure solution proposée par Simon serait d'utiliser Crossplane pour configurer l'enregistrement des vclusters dans ArgoCD de manière déclarative grâce au provider Kubernetes dans Crossplane. 
 ---
