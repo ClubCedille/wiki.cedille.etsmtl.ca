@@ -2,7 +2,7 @@
 title: Rétrospectives
 description: Documentation et analyse des rétrospectives de chaque sprint.
 date: 2023-10-09
-categories: [sprint]
+categories: [LOG791]
 weight: 1
 type: "docs"
 ---

@@ -1,6 +1,7 @@
 ---
 title: Rétrospective 1
 date: 2023-10-09
+categories: [LOG791]
 hide_summary: true
 toc_hide: true
 ---
