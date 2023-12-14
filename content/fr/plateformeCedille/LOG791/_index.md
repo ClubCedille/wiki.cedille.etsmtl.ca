@@ -1,6 +1,6 @@
 ---
-title: Sprints
-description: Documentation et aperçus des différentes itérations et rétrospectives de sprints.
+title: LOG791
+description: Documentation et aperçus des différentes itérations et rétrospectives de sprints dans le cadre du cours LOG791.
 date: 2023-10-09
 categories: [LOG791]
 weight: 9
