@@ -1,11 +1,12 @@
 ---
 title: Rapport final
 description: Compte rendu du projet de migration dans le cadre du cours LOG791
-date: 2023-12-18
+# date: 2023-12-18
 categories: [LOG791]
-weight: 1
+weight: 2
 type: "docs"
 ---
+
 # Plateforme CEDILLE -  Rapport LOG791
 
 ## Introduction
