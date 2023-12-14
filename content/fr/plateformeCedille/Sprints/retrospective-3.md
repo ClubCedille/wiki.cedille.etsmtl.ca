@@ -34,7 +34,7 @@ Date: 6 décembre 2023
 
 - **[Déploiement de cert-manager (ou equiv) dans le ns système](https://github.com/ClubCedille/Plateforme-Cedille/issues/26)** : 
 - **[Documenter Vault](https://github.com/ClubCedille/Plateforme-Cedille/issues/69)** : 
-- **[Intgration des vclusters avec ArgoCD](https://github.com/ClubCedille/Plateforme-Cedille/pull/129)** : Michael
+- **[Intgration des vclusters avec ArgoCD](https://github.com/ClubCedille/Plateforme-Cedille/pull/129)** : Une solution initiale a été essayé et échouée. Une solution de rechange doit être implementée.
 
 ### 2.2 Ne sera pas fait
 
@@ -42,9 +42,9 @@ Date: 6 décembre 2023
 
 ### 2.3 À faire
 
-- **[Deployer cluster staging [vcluster]](https://github.com/ClubCedille/Plateforme-Cedille/issues/6)** :
-- **[Deployer cluster sandbox [vcluster]](https://github.com/ClubCedille/Plateforme-Cedille/issues/7)** :
-- **[Mayastor Backup](https://github.com/ClubCedille/Plateforme-Cedille/issues/23)** :
+- **[Deployer cluster staging [vcluster]](https://github.com/ClubCedille/Plateforme-Cedille/issues/6)** : Le vcluster est déployé. Il reste a intégrer avec ArgoCD.
+- **[Deployer cluster sandbox [vcluster]](https://github.com/ClubCedille/Plateforme-Cedille/issues/7)** : Le vcluster est déployé. Il reste a intégrer avec ArgoCD.
+- **[Mayastor Backup](https://github.com/ClubCedille/Plateforme-Cedille/issues/23)** : Le backup est prévu. Une analyse sur le fournisseur externe sera faite.
 - **[Installation plugin Vault+ArgoCD](https://github.com/ClubCedille/Plateforme-Cedille/issues/103)** :
 - **[Update ArgoCD and Grafana SSO secrets with vault](https://github.com/ClubCedille/Plateforme-Cedille/issues/110)** : Nous étions en attente que le déploiement de vault dans le cluster soit terminés avec un exemple de configuration et gestion de secret pour pouvoir accomplir cette tâche. Elle pourra maintenant être complété avec des nouveaux secrets générés.
 - **[Documenter OTEL (configuration du collecteur et operateur)](https://github.com/ClubCedille/Plateforme-Cedille/issues/121)** : Maintenant que la configuration de OTEL avec un exemple de déploiement est complété, on va pouvoir documenter comment la configuration à été effectuée.
