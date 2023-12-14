@@ -10,11 +10,7 @@ type: "docs"
 
 ## Introduction
 
-Présentation du projet, y compris la vision, les objectifs, et l'importance du projet pour l'équipe et le domaine du génie logiciel.
-
-## Contexte du Projet
-
-Explication de l'environnement et des circonstances qui ont mené à ce projet. Cela peut inclure des tendances technologiques, des besoins organisationnels, etc.
+Présentation du projet, y compris la vision, les objectifs, et l'importance du projet pour l'équipe.
 
 ## Méthodologie
 
