@@ -25,6 +25,10 @@ Détails sur la façon dont le projet a été réalisé. Cela peut inclure la pl
 
 Une section consacrée aux problèmes rencontrés et aux solutions apportées. Inclure des exemples spécifiques de défis techniques, de gestion, ou de collaboration, et comment l'équipe les a surmontés.
 
+## Autres solutions envisagés
+
+Discussion sur les choix technologiques alternatifs.
+
 ## Résultats
 
 Analyse des résultats du projet. Cela peut inclure le succès par rapport aux objectifs initiaux, les livrables, et l'impact du projet.
