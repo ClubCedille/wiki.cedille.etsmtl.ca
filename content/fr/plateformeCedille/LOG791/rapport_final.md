@@ -58,10 +58,6 @@ Notre processus de collaboration a été fortement influencé par les principes 
 
 Pendant la phase d'analyse, on a identifié que certains choix techniques pouvaient être réalisés de plusieurs façons. Ainsi, dans le document de vision, on a identifié ces options et on s'est prononcé sur un choix initial (Tableau 4.4.2). Cependant, la phase d'implémentation nous a permis d'avoir une meilleure perspective sur certains choix et la possibilité de les changer. Ainsi, on présente ces choix ici:
 
-### Choix du CNI (Container Network Interface) et Ingress
-
-Durant la phase d'analyse, on a planifié d'utiliser une configuration BGP sur notre routeur et MetalLB afin d'éffectuer un équilibrage de charge au niveau IP. 
-
 ### Choix de l'engin de stockage
 
 Selon le CAR8, on a planifié d'utiliser Rook-Ceph comme engin de stockage pour Kubernetes. À titre de rappel, l'engin est responsable de fournir un service qui répond aux requêtes CSI dans Kubernetes afin d'allouer des espaces dédiés au pods, d'assurer que ces espaces sont accessibles dans tout le cluster et que les données soient durables et intègres.
@@ -71,6 +67,13 @@ Rook-Ceph est une extension de Ceph, qui est un système de stockage distribué 
 Après plusieurs essais, on a choisi de remplacer Rook-Ceph par Mayastor, qui est un système conçu dès le début pour Kubernetes. Au final, le déploiement était plus simple et le système est très stable.
 
 ### Choix de l'engin de gestion des secrets
+
+Étant donné le fait que notre répertoire de code est public et qu'on utilise l'approche GitOps, il est impératif qu'aucun secret ne soit divulgué dans le répertoire de code source. Ainsi, il nous faut une solution logicielle qui fait abstraction des secrets afin de les gérer de manière sécuritaire. Donc, les deux choix principaux pour le faire sont Hashicorp Vault vs Bitnami Sealed Secrets.
+
+Bitnami Sealed Secrets: Les secrets sont quand même présents dans git, mais ils sont cryptés.
+HashiCorp Vault: Les secrets ne sont pas dans Git, mais leurs configurations et des références le sont. Il offre aussi plusieurs modes de cryptage avancés, la génération dynamique, la rotation automatique et plusieurs autres fonctionnalités avancées.
+
+Ainsi, on a déterminé que Vault serait une meilleure solution pour ce projet puisqu’on le juge plus sécuritaire (puisqu’aucun secret n’est divulgué publiquement comme dans le cas de sealed-secrets) et qu'on aurait besoin des fonctions plus avancées qu'il nous offre.
 
 ### Choix d'utilisation d'un Hypervisor
 
