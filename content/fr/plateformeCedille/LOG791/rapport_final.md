@@ -66,7 +66,7 @@ Notre projet a connu une progression significative, marquée par une série de t
 - Création d'un wiki pour centraliser la documentation et rédaction du document de vision initial.
 - Migration physique des serveurs vers la salle de serveurs et configuration de KubeVirt.
 
-### Développement et configuration Avancée (livrable 2)
+### Développement et configuration avancée (livrable 2)
 
 - Déploiement d'un cluster sandbox avec Vcluster, installation et configuration de l'external-dns, Hashicorp Vault, et Crossplane sur le cluster.
 - Mise en place de la structure Kustomize, configuration d'ArgoCD, Contour (reverse-proxy/ingress), et déploiement de Kuma + Merbridge (service-mesh).
