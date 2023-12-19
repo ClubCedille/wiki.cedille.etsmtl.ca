@@ -56,12 +56,9 @@ Discussion sur les choix technologiques alternatifs.
 
 Notre projet a connu une progression significative, marquée par une série de tâches réalisées avec succès, chacune contribuant de manière essentielle à l'avancement global. Voici un résumé des tâches accomplies, présentées dans l'ordre chronologique de leur réalisation ainsi que par livrable :
 
-### Livrable 1: Phase initiale de préparation et d'entrevues
+### Livrable 1: Phase initiale de préparation et d'entrevues. Déploiement et configuration initiale
 
 - Préparation de questionnaires spécifiques à chaque client et conduite d'entrevues avec divers clubs et services de l'ÉTS, notamment AlgoETS, Raconteurs d'Angles, Saveurs de Génie, et les services TI. Ces entrevues ont permis de définir les métriques de succès du projet.
-
-### Livrable 1: Déploiement et configuration initiale
-
 - Mise en place du cluster physique avec Talos/Omni et configuration de base de Rook/Ceph. Evaluation de la stack de networking pour Kubernetes.
 - Création d'un wiki pour centraliser la documentation et rédaction du document de vision initial.
 - Migration physique des serveurs vers la salle de serveurs et configuration de KubeVirt.
