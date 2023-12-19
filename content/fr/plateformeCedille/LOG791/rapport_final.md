@@ -85,6 +85,20 @@ Bien que de nombreuses tâches aient été menées à bien, certaines sont encor
 
 En termes de tâches non réalisées, nous avons décidé de ne pas poursuivre l'installation/configuration de k8s-sigs/external-dns dans le cluster, en raison de contraintes spécifiques au projet.
 
+### Résultat finale
+
+Notre projet a conduit à l'établissement d'une plateforme de déploiement capable de gérer une variété de services. Cette plateforme marque un progrès dans notre façon de déployer, gérer et surveiller les services informatiques, offrant une solution qui répond aux besoins variés de chaque club.
+
+Pour des applications web, des bases de données ou des services de backend, elle fournit la flexibilité et les capacités nécessaires pour une gestion efficace et sécurisée des déploiements. Avec des outils tels qu'ArgoCD et Kustomize, le processus de déploiement est automatisé, facilitant des mises à jour et une maintenance continues.
+
+Dans le domaine de l'observabilité et du monitoring, la plateforme intègre OpenTelemetry, Grafana et Clickhouse, offrant une vue complète sur les performances et l'état de santé de chaque service déployé. Cette capacité de surveillance est essentielle pour identifier rapidement les problèmes et optimiser les performances.
+
+La gestion des secrets est gérée par l'implémentation de Hashicorp Vault, offrant une approche centralisée et sécurisée qui améliore la sécurité des services et simplifie les processus opérationnels.
+
+La plateforme permet également de créer des environnements isolés avec Vcluster, bénéfique pour les développeurs des différents clubs. Ils peuvent tester et développer dans des environnements séparés sans impacter l'infrastructure principale. Cette fonctionnalité favorise une approche de développement anticipatif, où les tests et la détection des erreurs se font plus tôt dans le cycle de développement.
+
+La gestion du HTTPS et de l'ingress est assurée par Cert-Manager et Contour, fournissant une configuration sécurisée pour l'accès aux services. Cette combinaison assure l'accessibilité et la sécurité des services déployés, avec une gestion automatisée des certificats SSL/TLS.
+
 ## Apprentissages et Compétences Acquises
 
 ### Configuration de l'OTEL-Collector et création de traces manuelle en Golang pour l'application Calidum-Rotae
