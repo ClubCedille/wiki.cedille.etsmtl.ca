@@ -141,19 +141,7 @@ La gestion du HTTPS et de l'ingress est assurée par Cert-Manager et Contour, fo
 
 ## Thomas
 
-#### Configuration de l'OTEL-Collector et création de traces manuelle en Golang pour l'application Calidum-Rotae
-
-Au cours de notre projet, la configuration de l'OTEL-Collector a été une étape cruciale qui a grandement contribué à notre compréhension de l'observabilité dans les systèmes modernes. Cette expérience nous a permis de saisir l'importance de collecter, traiter et exporter des données de télémétrie de manière efficace. Nous avons acquis des compétences techniques approfondies en instrumentation de systèmes, apprenant à configurer divers récepteurs, processeurs et exportateurs pour répondre à nos besoins spécifiques. En outre, cette tâche nous a dotés d'une meilleure compréhension de la gestion de la performance des applications et du débogage, des compétences essentielles pour identifier et résoudre rapidement les problèmes.
-
-#### Développement de compétences en programmation Golang pour Calidum-Rotae
-
-La création de traces manuelles en Golang pour l'application Calidum-Rotae a été une autre facette importante de notre projet. Cette expérience a renforcé notre maîtrise de la programmation en Go, nous permettant d'apprendre des techniques avancées pour intégrer l'observabilité dans le code. Nous avons acquis une compréhension approfondie des principes du tracing distribué, comprenant comment les traces peuvent fournir des insights précieux sur le comportement des applications distribuées et faciliter le suivi des interactions au sein des microservices. La création manuelle de traces nous a offert une expérience pratique, nous apprenant à identifier les points clés de l'application où les traces sont les plus bénéfiques et à les implémenter de manière à maximiser leur utilité pour le monitoring et le débogage.
-
-#### Renforcement des compétences de gestion et interpersonnelles
-
-Travailler sur des aspects techniques complexes comme l'OTEL-Collector et le tracing en Golang a également eu un impact significatif sur nos compétences de gestion et interpersonnelles. Cette expérience a renforcé notre capacité à collaborer efficacement au sein de l'équipe. Nous avons appris à communiquer des concepts techniques complexes, améliorant ainsi notre collaboration et notre efficacité collective. De plus, face aux défis techniques, nous avons développé une approche plus structurée et critique pour résoudre les problèmes. Cette compétence de résolution de problèmes et de pensée critique est essentielle dans tout projet technologique, nous permettant de naviguer efficacement à travers des situations complexes et imprévues.
-
-En conclusion, ces expériences ont joué un rôle déterminant dans notre croissance professionnelle. Elles ont non seulement renforcé nos compétences techniques mais ont également amélioré notre capacité à travailler en équipe, à communiquer efficacement et à aborder les problèmes de manière créative et structurée.2
+Dans le projet Plateforme Cedille, j'ai pris en charge la configuration d'OpenTelemetry, incluant le collecteur et l'opérateur, enrichissant ainsi ma compréhension de l'observabilité des systèmes. En parallèle, j'ai utilisé mes compétences en Golang pour intégrer des traces dans l'application calidum-rotae, en appliquant les principes du tracing distribué pour optimiser le monitoring et le débogage. J'ai également appris à utiliser Clickhouse pour le stockage et l'analyse des données collectées d'OpenTelemetry, et Grafana pour leur visualisation. Cette combinaison d'OpenTelemetry, Clickhouse et Grafana a créé un écosystème de monitoring complet, me permettant de voir comment ces technologies interagissent et se complètent. 
 
 ## Jonathan
 
