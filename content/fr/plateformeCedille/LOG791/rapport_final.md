@@ -85,7 +85,7 @@ Bien que de nombreuses tâches aient été menées à bien, certaines sont encor
 
 En termes de tâches non réalisées, nous avons décidé de ne pas poursuivre l'installation/configuration de k8s-sigs/external-dns dans le cluster, en raison de contraintes spécifiques au projet.
 
-### Résultat finale
+### Résultat final
 
 Notre projet a conduit à l'établissement d'une plateforme de déploiement capable de gérer une variété de services. Cette plateforme marque un progrès dans notre façon de déployer, gérer et surveiller les services informatiques, offrant une solution qui répond aux besoins variés de chaque club.
 
