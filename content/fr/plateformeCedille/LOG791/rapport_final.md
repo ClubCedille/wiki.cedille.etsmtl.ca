@@ -27,17 +27,18 @@ Par le biais de ce rapport, nous aspirons à vous fournir une vue d'ensemble exh
 
 Description des méthodes et des processus utilisés pendant le projet. Cela peut inclure des approches de gestion de projet, des outils logiciels, des techniques de collaboration, etc.
 
-## Développement et Mise en Œuvre
-
 Détails sur la façon dont le projet a été réalisé. Cela peut inclure la planification, la répartition des tâches, les phases de développement, et les stratégies de mise en œuvre.
 
-## Défis et Solutions
+## Architecture technique
 
-Une section consacrée aux problèmes rencontrés et aux solutions apportées. Inclure des exemples spécifiques de défis techniques, de gestion, ou de collaboration, et comment l'équipe les a surmontés.
 
 ## Autres solutions envisagés
 
 Discussion sur les choix technologiques alternatifs.
+
+## Défis et Solutions
+
+Une section consacrée aux problèmes rencontrés et aux solutions apportées. Inclure des exemples spécifiques de défis techniques, de gestion, ou de collaboration, et comment l'équipe les a surmontés.
 
 ## Résultats
 
