@@ -25,9 +25,31 @@ Par le biais de ce rapport, nous aspirons à vous fournir une vue d'ensemble exh
 
 ## Méthodologie
 
-Description des méthodes et des processus utilisés pendant le projet. Cela peut inclure des approches de gestion de projet, des outils logiciels, des techniques de collaboration, etc.
+Pour mener à bien le projet Plateforme CEDILLE, notre équipe d'étudiants a adopté une approche pratique et flexible, combinant des outils de collaboration modernes et des méthodes de travail adaptées à notre contexte étudiant.
 
-Détails sur la façon dont le projet a été réalisé. Cela peut inclure la planification, la répartition des tâches, les phases de développement, et les stratégies de mise en œuvre.
+### Planification Initiale et Vision du Projet
+
+Au début du projet, nous avons commencé par une phase de planification détaillée. Pour cela, on a utilisé un grand tableau pour visualiser l'ensemble de notre stack technologique et comprendre comment les différents éléments interagissaient entre eux. Cette étape a été cruciale pour nous aider à rédiger notre document de vision. Ce document a servi de feuille de route pour tout le projet, en définissant clairement nos objectifs et notre approche.
+
+### Organisation du Travail et Backlog
+
+Une fois notre vision établie, nous avons dressé une liste exhaustive de toutes les tâches à réaliser dans notre backlog sur GitHub. Cela nous a permis d'évaluer l'ampleur du projet et de diviser le travail en trois grandes itérations d'un mois chacune. Cette approche itérative nous a aidés à rester concentrés et à mesurer notre progression de façon régulière.
+
+### Retrospectives et Ajustements
+
+Après chaque itération, on prenait le temps de faire une rétrospective. Ces moments étaient essentiels pour réfléchir à ce qui s'était bien passé et à ce qu'on pouvait améliorer pour la suite. Grâce à ces rétrospectives, on a pu ajuster notre planification et notre approche pour les itérations suivantes, en tirant des leçons de nos expériences précédentes.
+
+### Documentation et Suivi sur le Wiki
+
+Toute notre progression a été soigneusement documentée sur notre wiki. Pour chaque tâche ou problème rencontré, on créait une entrée sur le wiki avec des liens directs vers les issues correspondantes sur GitHub. Cela a permis à toute l'équipe de suivre facilement l'avancement du projet et de retrouver rapidement les informations pertinentes liées à chaque tâche.
+
+### Réunions et Communication
+
+La communication constante et efficace a été un pilier de notre projet. Nous avons organisé des séances de travail en présentiel chaque dimanche à l'école pour une collaboration et des discussions techniques approfondies. En complément, des réunions hebdomadaires sur le modèle Scrum étaient tenues tous les lundis, permettant à l'équipe de discuter des avancées, de planifier les prochaines étapes et de résoudre les obstacles rencontrés.
+
+### Adoption des Principes Agile et DevOps
+
+Notre processus de collaboration a été fortement influencé par les principes Agile et DevOps. Nous avons adopté une approche itérative pour le développement, permettant une adaptation et une réactivité rapides aux changements. Le déploiement continu et les mises à jour de notre architecture ont été gérés via l'Infrastructure as Code (IaC), en utilisant des pipelines CI/CD pour automatiser et rationaliser ces processus. De plus, l'utilisation de templates pour les issues et pull requests sur GitHub a renforcé notre efficacité et a maintenu une norme de clarté et de cohérence dans notre communication et nos pratiques de développement.
 
 ## Architecture technique
 
