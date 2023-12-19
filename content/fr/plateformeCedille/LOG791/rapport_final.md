@@ -56,24 +56,24 @@ Discussion sur les choix technologiques alternatifs.
 
 Notre projet a connu une progression significative, marquée par une série de tâches réalisées avec succès, chacune contribuant de manière essentielle à l'avancement global. Voici un résumé des tâches accomplies, présentées dans l'ordre chronologique de leur réalisation ainsi que par livrable :
 
-### Phase initiale de préparation et d'entrevues (livrable 1)
+### Livrable 1: Phase initiale de préparation et d'entrevues
 
 - Préparation de questionnaires spécifiques à chaque client et conduite d'entrevues avec divers clubs et services de l'ÉTS, notamment AlgoETS, Raconteurs d'Angles, Saveurs de Génie, et les services TI. Ces entrevues ont permis de définir les métriques de succès du projet.
 
-### Déploiement et configuration initiale (livrable 1)
+### Livrable 1: Déploiement et configuration initiale
 
 - Mise en place du cluster physique avec Talos/Omni et configuration de base de Rook/Ceph. Evaluation de la stack de networking pour Kubernetes.
 - Création d'un wiki pour centraliser la documentation et rédaction du document de vision initial.
 - Migration physique des serveurs vers la salle de serveurs et configuration de KubeVirt.
 
-### Développement et configuration avancée (livrable 2)
+### Livrable 2: Développement et configuration avancée
 
 - Déploiement d'un cluster sandbox avec Vcluster, installation et configuration de l'external-dns, Hashicorp Vault, et Crossplane sur le cluster.
 - Mise en place de la structure Kustomize, configuration d'ArgoCD, Contour (reverse-proxy/ingress), et déploiement de Kuma + Merbridge (service-mesh).
 - Configuration et déploiement de Grafana, Gateway API, et Mayastor.
 - Documentation approfondie de KubeVirt, Kuma, Merbridge, et Contour.
 
-### Finalisation et optimisation (livrable 3)
+### Livrable 3: Finalisation et optimisation
 
 - Déploiement de cert-manager, documentation de Mayastor et de la configuration d'environnement locale avec Omni.
 - Configuration d'OTEL, suivi de Clickhouse avec Open Telemetry, et déploiement d'exemples d'applications comme Grav et Calidum-Rotae.
@@ -91,7 +91,7 @@ En termes de tâches non réalisées, nous avons décidé de ne pas poursuivre l
 
 Au cours de notre projet, la configuration de l'OTEL-Collector a été une étape cruciale qui a grandement contribué à notre compréhension de l'observabilité dans les systèmes modernes. Cette expérience nous a permis de saisir l'importance de collecter, traiter et exporter des données de télémétrie de manière efficace. Nous avons acquis des compétences techniques approfondies en instrumentation de systèmes, apprenant à configurer divers récepteurs, processeurs et exportateurs pour répondre à nos besoins spécifiques. En outre, cette tâche nous a dotés d'une meilleure compréhension de la gestion de la performance des applications et du débogage, des compétences essentielles pour identifier et résoudre rapidement les problèmes.
 
-#### Développement de Compétences en Programmation Golang pour Calidum-Rotae
+#### Développement de compétences en programmation Golang pour Calidum-Rotae
 
 La création de traces manuelles en Golang pour l'application Calidum-Rotae a été une autre facette importante de notre projet. Cette expérience a renforcé notre maîtrise de la programmation en Go, nous permettant d'apprendre des techniques avancées pour intégrer l'observabilité dans le code. Nous avons acquis une compréhension approfondie des principes du tracing distribué, comprenant comment les traces peuvent fournir des insights précieux sur le comportement des applications distribuées et faciliter le suivi des interactions au sein des microservices. La création manuelle de traces nous a offert une expérience pratique, nous apprenant à identifier les points clés de l'application où les traces sont les plus bénéfiques et à les implémenter de manière à maximiser leur utilité pour le monitoring et le débogage.
 
@@ -99,7 +99,7 @@ La création de traces manuelles en Golang pour l'application Calidum-Rotae a é
 
 Travailler sur des aspects techniques complexes comme l'OTEL-Collector et le tracing en Golang a également eu un impact significatif sur nos compétences de gestion et interpersonnelles. Cette expérience a renforcé notre capacité à collaborer efficacement au sein de l'équipe. Nous avons appris à communiquer des concepts techniques complexes, améliorant ainsi notre collaboration et notre efficacité collective. De plus, face aux défis techniques, nous avons développé une approche plus structurée et critique pour résoudre les problèmes. Cette compétence de résolution de problèmes et de pensée critique est essentielle dans tout projet technologique, nous permettant de naviguer efficacement à travers des situations complexes et imprévues.
 
-En conclusion, ces expériences ont joué un rôle déterminant dans notre croissance professionnelle. Elles ont non seulement renforcé nos compétences techniques mais ont également amélioré notre capacité à travailler en équipe, à communiquer efficacement et à aborder les problèmes de manière créative et structurée. Ces compétences acquises seront inestimables pour nos futurs projets et défis professionnels.
+En conclusion, ces expériences ont joué un rôle déterminant dans notre croissance professionnelle. Elles ont non seulement renforcé nos compétences techniques mais ont également amélioré notre capacité à travailler en équipe, à communiquer efficacement et à aborder les problèmes de manière créative et structurée.
 
 ## Conclusion
 
