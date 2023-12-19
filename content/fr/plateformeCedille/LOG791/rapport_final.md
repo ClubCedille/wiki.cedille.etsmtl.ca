@@ -56,7 +56,15 @@ Notre processus de collaboration a été fortement influencé par les principes 
 
 ## Autres solutions envisagés
 
-Discussion sur les choix technologiques alternatifs.
+Pendant la phase d'analyse, on a identifié que certains choix techniques pouvaient être réalisés de plusieurs façons. Ainsi, dans le document de vision, on a identifié ces options et on s'est prononcé sur un choix initial (Tableau 4.4.2). Cependant, la phase d'implémentation nous a permis d'avoir une meilleure perspective sur certains choix et la possibilité de les changer. Ainsi, on présente ces choix ici:
+
+### Choix du CNI (Container Network Interface) et Ingress
+
+### Choix de l'engin de stockage
+
+### Choix de l'engin de gestion des secrets
+
+### Choix d'utilisation d'un Hypervisor
 
 ## Défis et Solutions
 
