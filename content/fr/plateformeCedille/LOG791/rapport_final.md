@@ -120,7 +120,9 @@ La gestion du HTTPS et de l'ingress est assurée par Cert-Manager et Contour, fo
 
 ## Apprentissages et Compétences Acquises
 
-### Configuration de l'OTEL-Collector et création de traces manuelle en Golang pour l'application Calidum-Rotae
+## Thomas
+
+#### Configuration de l'OTEL-Collector et création de traces manuelle en Golang pour l'application Calidum-Rotae
 
 Au cours de notre projet, la configuration de l'OTEL-Collector a été une étape cruciale qui a grandement contribué à notre compréhension de l'observabilité dans les systèmes modernes. Cette expérience nous a permis de saisir l'importance de collecter, traiter et exporter des données de télémétrie de manière efficace. Nous avons acquis des compétences techniques approfondies en instrumentation de systèmes, apprenant à configurer divers récepteurs, processeurs et exportateurs pour répondre à nos besoins spécifiques. En outre, cette tâche nous a dotés d'une meilleure compréhension de la gestion de la performance des applications et du débogage, des compétences essentielles pour identifier et résoudre rapidement les problèmes.
 
@@ -132,7 +134,13 @@ La création de traces manuelles en Golang pour l'application Calidum-Rotae a é
 
 Travailler sur des aspects techniques complexes comme l'OTEL-Collector et le tracing en Golang a également eu un impact significatif sur nos compétences de gestion et interpersonnelles. Cette expérience a renforcé notre capacité à collaborer efficacement au sein de l'équipe. Nous avons appris à communiquer des concepts techniques complexes, améliorant ainsi notre collaboration et notre efficacité collective. De plus, face aux défis techniques, nous avons développé une approche plus structurée et critique pour résoudre les problèmes. Cette compétence de résolution de problèmes et de pensée critique est essentielle dans tout projet technologique, nous permettant de naviguer efficacement à travers des situations complexes et imprévues.
 
-En conclusion, ces expériences ont joué un rôle déterminant dans notre croissance professionnelle. Elles ont non seulement renforcé nos compétences techniques mais ont également amélioré notre capacité à travailler en équipe, à communiquer efficacement et à aborder les problèmes de manière créative et structurée.
+En conclusion, ces expériences ont joué un rôle déterminant dans notre croissance professionnelle. Elles ont non seulement renforcé nos compétences techniques mais ont également amélioré notre capacité à travailler en équipe, à communiquer efficacement et à aborder les problèmes de manière créative et structurée.2
+
+## Jonathan
+
+## Michael
+
+## Simon
 
 ## Conclusion
 
