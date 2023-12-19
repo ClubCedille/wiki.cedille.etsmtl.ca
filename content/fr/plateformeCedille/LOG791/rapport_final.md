@@ -64,6 +64,12 @@ Durant la phase d'analyse, on a planifié d'utiliser une configuration BGP sur n
 
 ### Choix de l'engin de stockage
 
+Selon le CAR8, on a planifié d'utiliser Rook-Ceph comme engin de stockage pour Kubernetes. À titre de rappel, l'engin est responsable de fournir un service qui répond aux requêtes CSI dans Kubernetes afin d'allouer des espaces dédiés au pods, d'assurer que ces espaces sont accessibles dans tout le cluster et que les données soient durables et intègres.
+
+Rook-Ceph est une extension de Ceph, qui est un système de stockage distribué qui prédate Kubernetes. En principe, ce dernier répond à tous nos besoins en termes d'engin. Cependant, en pratique, on a remarqué que le système était très instable à notre échelle (3 serveurs).
+
+Après plusieurs essais, on a choisi de remplacer Rook-Ceph par Mayastor, qui est un système conçu dès le début pour Kubernetes. Au final, le déploiement était plus simple et le système est très stable.
+
 ### Choix de l'engin de gestion des secrets
 
 ### Choix d'utilisation d'un Hypervisor
