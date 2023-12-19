@@ -60,7 +60,7 @@ Pendant la phase d'analyse, on a identifié que certains choix techniques pouvai
 
 ### Choix du CNI (Container Network Interface) et Ingress
 
-Durant la phase d'analyse, on a planifié d'utiliser une configuration BGP sur notre routeur et MetalLB afin d'éffectuer un équilibrage de charge au niveau IP.
+Durant la phase d'analyse, on a planifié d'utiliser une configuration BGP sur notre routeur et MetalLB afin d'éffectuer un équilibrage de charge au niveau IP. 
 
 ### Choix de l'engin de stockage
 
@@ -152,6 +152,8 @@ Dans le projet Plateforme Cedille, j'ai pris en charge la configuration d'OpenTe
 ## Jonathan
 
 ## Michael
+
+Avec ce projet, j'ai eu l'opportunité d'apprendre comment utiliser et concevoir une bonne structure de projet avec Kustomize. Également, j'ai appris comment utiliser ArgoCD pour déployer des applications selon l'approche GitOps. J'ai aussi collaboré avec mes coéquipiers sur les autres aspects du projet, ce qui a été une bonne occasion de pratiquer mes habiletés en communication et en travail d'équipe. Ce qui est de plus grande valeur pour ce projet est le fait qu'on a bâti un tout nouveau système, en équipe. Ainsi, on a débuté avec une idée initiale, discutée, analysée, décidée, architecturée et implémenté chaque niveau du système, ce qui est une expérience de valeur incalculable.
 
 ## Simon
 
