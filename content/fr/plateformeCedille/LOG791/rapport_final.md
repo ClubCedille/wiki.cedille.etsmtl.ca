@@ -54,7 +54,7 @@ Notre processus de collaboration a été fortement influencé par les principes 
 ## Architecture technique
 
 
-## Autres solutions envisagés
+## Autres solutions envisagées
 
 Pendant la phase d'analyse, on a identifié que certains choix techniques pouvaient être réalisés de plusieurs façons. Ainsi, dans le document de vision, on a identifié ces options et on s'est prononcé sur un choix initial (Tableau 4.4.2). Cependant, la phase d'implémentation nous a permis d'avoir une meilleure perspective sur certains choix et la possibilité de les changer. Ainsi, on présente ces choix ici:
 
@@ -74,6 +74,12 @@ Bitnami Sealed Secrets: Les secrets sont quand même présents dans git, mais il
 HashiCorp Vault: Les secrets ne sont pas dans Git, mais leurs configurations et des références le sont. Il offre aussi plusieurs modes de cryptage avancés, la génération dynamique, la rotation automatique et plusieurs autres fonctionnalités avancées.
 
 Ainsi, on a déterminé que Vault serait une meilleure solution pour ce projet puisqu’on le juge plus sécuritaire (puisqu’aucun secret n’est divulgué publiquement comme dans le cas de sealed-secrets) et qu'on aurait besoin des fonctions plus avancées qu'il nous offre.
+
+### Choix de la plateforme d'observabilité
+
+Selon le CAR13, on a choisi d'utiliser les technologies ouvertes Pixie, OpenTelemetry et Clickhouse dans une configuration construite sur mesure pour les fins d'observabilité. L'autre choix était de prendre une solution commerciale / tout-en-une tel que Elastic ou Groundcover.
+
+Ce qui influence notre choix pour cet aspect est qu'une considération importante pour Cédille est de promouvoir l'utilisation de logiciels libres. Ainsi, utiliser des solutions commerciales est à l'encontre de cet objectif, et on essaye d'éviter ce genre de choix quand c'est possible. De plus, on a jugé que la construction d'une solution sur-mesure en combinant ces technologies (Pixie, OpenTelemetry et Clickhouse) aurait une plus grande valeur en tant qu'apprentissage et donnerait un résultat qui répondrait mieux à nos besoins.
 
 ### Choix d'utilisation d'un Hypervisor
 
