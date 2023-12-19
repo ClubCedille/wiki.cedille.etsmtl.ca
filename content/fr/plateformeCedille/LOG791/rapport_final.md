@@ -60,11 +60,22 @@ Pendant la phase d'analyse, on a identifié que certains choix techniques pouvai
 
 ### Choix du CNI (Container Network Interface) et Ingress
 
+Durant la phase d'analyse, on a planifié d'utiliser une configuration BGP sur notre routeur et MetalLB afin d'éffectuer un équilibrage de charge au niveau IP.
+
 ### Choix de l'engin de stockage
 
 ### Choix de l'engin de gestion des secrets
 
 ### Choix d'utilisation d'un Hypervisor
+
+Avant la phase d'analyse et rédaction du document de vision, on a entrepris une phase d'installation et configuration du matériel physique. Dans cette phase, on avait essayé en premier d'utiliser l’hyperviseur XCP-NG comme système d'exploitation principal, le plan étant de configurer nos clusters Kubernetes avec des machines virtuelles.
+
+Afin de respecter notre objectif d'utiliser des configurations déclaratives le plus possible, on devait faire une gestion exhaustive de l’hyperviseur, de son réseau et de son stockage avec Terraform. Ainsi, on n'était pas prêt à accepter le niveau de complexité qui aurait été ajouté par cette méthode, donc on a choisi d'installer Talos Linux directement sur les machines sans Hypervisor.
+
+Le résultat final est que la majorité des configurations et installations sont faites nativement dans le cluster Kubernetes, ce qui offre un haut niveau de cohérence dans le code du projet.
+
+![Figure - Comparaison des moyens de déploiement](rf-comp-xoa-direct.png)
+**Figure: Comparaison des moyens de déploiement**
 
 ## Défis et Solutions
 
