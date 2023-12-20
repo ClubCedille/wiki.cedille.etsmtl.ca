@@ -1,6 +1,6 @@
 ---
 title: Rétrospective 3
-#date: 2023-12-6
+date: 2023-12-6
 hide_summary: true
 categories: [LOG791]
 toc_hide: true
