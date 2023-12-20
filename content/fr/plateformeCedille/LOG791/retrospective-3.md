@@ -68,4 +68,5 @@ Date: 6 décembre 2023
 - **Problème 3**: Lors de nos premiers essais, Grav plantait à la première connexion.
   - **Cause**: Lors de l'initialisation de grav, celui-ci tente de modifier le fichier de configuration qui est généré par vault, car vault met le mot de passe en texte et grav souhaite changer cela pour un hash. Or le fichier de vault est read-only.
   - **Solution**: Créer un script de démarrage qui copie le fichier initial vers l'emplacement de destination. Cela permet aussi aux utilisateurs de changer la configuration dans le futur sans passer par nous.
+  
 ---
