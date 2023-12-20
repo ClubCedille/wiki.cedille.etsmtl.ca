@@ -89,7 +89,7 @@ Afin de respecter notre objectif d'utiliser des configurations déclaratives le 
 
 Le résultat final est que la majorité des configurations et installations sont faites nativement dans le cluster Kubernetes, ce qui offre un haut niveau de cohérence dans le code du projet.
 
-![Figure - Comparaison des moyens de déploiement](rf-comp-xoa-direct.png)
+![Figure - Comparaison des moyens de déploiement](./rf-comp-xoa-direct.png)
 **Figure: Comparaison des moyens de déploiement**
 
 ## Défis et Solutions
@@ -154,11 +154,11 @@ La gestion du HTTPS et de l'ingress est assurée par Cert-Manager et Contour, fo
 
 ## Apprentissages et Compétences Acquises
 
-## Thomas
+### Thomas
 
 Dans le projet Plateforme Cedille, j'ai pris en charge la configuration d'OpenTelemetry, incluant le collecteur et l'opérateur, enrichissant ainsi ma compréhension de l'observabilité des systèmes. En parallèle, j'ai utilisé mes compétences en Golang pour intégrer des traces dans l'application calidum-rotae, en appliquant les principes du tracing distribué pour optimiser le monitoring et le débogage. J'ai également appris à utiliser Clickhouse pour le stockage et l'analyse des données collectées d'OpenTelemetry, et Grafana pour leur visualisation. Cette combinaison d'OpenTelemetry, Clickhouse et Grafana a créé un écosystème de monitoring complet, me permettant de voir comment ces technologies interagissent et se complètent. 
 
-## Jonathan
+### Jonathan
 
 Rejoindre ce projet a été pour moi une première expérience dans la création d'une infrastructure informatique. Apprendre à configurer et utiliser les différents services a été un des points forts pour moi. J'ai pu voir comment chaque service apporte sa pierre à l'édifice et comment tout s'imbrique pour créer un système fonctionnel. Cette compréhension pratique m'a armé d'une solide base pour estimer l'effort requis pour déployer chaque service et dimensionner les ressources nécessaires, que ce soit pour une migration d'envergure ou la mise en place d'une nouvelle infrastructure.
 
@@ -166,11 +166,11 @@ Ce projet m'a offert un modèle de référence, non seulement pour mes futurs pr
 
 Au-delà des aspects techniques, ce projet m'a permit de voir concrétement comment la division du travail en itérations et la planification en fonction des retours ont été des aspects clés qui ont permit une adaptabilité et réactivité productive et continue à travers les itérations.
 
-## Michael
+### Michael
 
 Avec ce projet, j'ai eu l'opportunité d'apprendre comment utiliser et concevoir une bonne structure de projet avec Kustomize. Également, j'ai appris comment utiliser ArgoCD pour déployer des applications selon l'approche GitOps. J'ai aussi collaboré avec mes coéquipiers sur les autres aspects du projet, ce qui a été une bonne occasion de pratiquer mes habiletés en communication et en travail d'équipe. Ce qui est de plus grande valeur pour ce projet est le fait qu'on a bâti un tout nouveau système, en équipe. Ainsi, on a débuté avec une idée initiale, discutée, analysée, décidée, architecturée et implémenté chaque niveau du système, ce qui est une expérience de valeur incalculable.
 
-## Simon
+### Simon
 
 ## Conclusion
 
@@ -185,7 +185,5 @@ Pour les futurs projets, notre conseil serait de valoriser l'adaptabilité et la
 En somme, ce projet a été une expérience enrichissante qui a dépassé nos attentes en termes d'apprentissage et de développement professionnel. Nous sommes enthousiastes à l'idée d'appliquer ces compétences et ces connaissances acquises dans les phases suivantes de notre travail et dans nos futures initiatives.
 
 ## Annexes
-
-Tout matériel supplémentaire pertinent, tel que des graphiques, des tableaux de données, des images, etc.
 
 ---
