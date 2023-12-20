@@ -89,7 +89,7 @@ Afin de respecter notre objectif d'utiliser des configurations déclaratives le 
 
 Le résultat final est que la majorité des configurations et installations sont faites nativement dans le cluster Kubernetes, ce qui offre un haut niveau de cohérence dans le code du projet.
 
-![Figure - Comparaison des moyens de déploiement](./rf-comp-xoa-direct.png)
+![Figure - Comparaison des moyens de déploiement](/plateformeCedille/LOG791//rf-comp-xoa-direct.png)
 **Figure: Comparaison des moyens de déploiement**
 
 ## Défis et Solutions
