@@ -160,6 +160,12 @@ Dans le projet Plateforme Cedille, j'ai pris en charge la configuration d'OpenTe
 
 ## Jonathan
 
+Rejoindre ce projet a été pour moi une première expérience dans la création d'une infrastructure informatique. Apprendre à configurer et utiliser les différents services a été un des points forts pour moi. J'ai pu voir comment chaque service apporte sa pierre à l'édifice et comment tout s'imbrique pour créer un système fonctionnel. Cette compréhension pratique m'a armé d'une solide base pour estimer l'effort requis pour déployer chaque service et dimensionner les ressources nécessaires, que ce soit pour une migration d'envergure ou la mise en place d'une nouvelle infrastructure.
+
+Ce projet m'a offert un modèle de référence, non seulement pour mes futurs projets, mais aussi pour quiconque s'intéresse à notre travail, étant donné que tout le projet est accessible publiquement. C'est une expérience qui me sera utile bien au-delà du cadre de ce projet.
+
+Au-delà des aspects techniques, ce projet m'a permit de voir concrétement comment la division du travail en itérations et la planification en fonction des retours ont été des aspects clés qui ont permit une adaptabilité et réactivité productive et continue à travers les itérations.
+
 ## Michael
 
 Avec ce projet, j'ai eu l'opportunité d'apprendre comment utiliser et concevoir une bonne structure de projet avec Kustomize. Également, j'ai appris comment utiliser ArgoCD pour déployer des applications selon l'approche GitOps. J'ai aussi collaboré avec mes coéquipiers sur les autres aspects du projet, ce qui a été une bonne occasion de pratiquer mes habiletés en communication et en travail d'équipe. Ce qui est de plus grande valeur pour ce projet est le fait qu'on a bâti un tout nouveau système, en équipe. Ainsi, on a débuté avec une idée initiale, discutée, analysée, décidée, architecturée et implémenté chaque niveau du système, ce qui est une expérience de valeur incalculable.
@@ -168,7 +174,15 @@ Avec ce projet, j'ai eu l'opportunité d'apprendre comment utiliser et concevoir
 
 ## Conclusion
 
-Synthèse des principaux apprentissages, réalisations, et recommandations pour des projets futurs.
+En rétrospective, le projet Plateforme CEDILLE a été une expérience formatrice, riche en enseignements techniques et en gestion de projet. Nous avons relevé le défi de concevoir et de mettre en place une infrastructure informatique complexe, ce qui a demandé une coordination minutieuse et une collaboration étroite entre les membres de l'équipe.
+
+Une des leçons clés tirées de ce projet est la nécessité de mieux prioriser notre carnet de travail. Avec le recul, nous avons réalisé que certaines opérations étaient bloquantes et auraient dû être traitées en priorité.  Par exemple, la configuration de Vault, un composant clé pour la gestion des secrets, aurait pu être réalisée plus tôt étant donné que plusieurs autres services dépendaient de sa mise en place. Cette prise de conscience sera cruciale pour l'efficacité de nos futurs projets.
+
+Avec l'infrastructure principalement en place, notre prochaine étape est de planifier et de réaliser la migration des services existants. Cette phase requiert une gestion méticuleuse pour assurer une transition sans heurts, en mettant l'accent sur la minimisation des interruptions de service et l'optimisation de la performance et de la sécurité.
+
+Pour les futurs projets, notre conseil serait de valoriser l'adaptabilité et la capacité à répondre aux changements imprévus. La flexibilité dans la planification et la volonté de réviser les stratégies face à de nouvelles informations ont été des facteurs clés dans le succès du projet.
+
+En somme, ce projet a été une expérience enrichissante qui a dépassé nos attentes en termes d'apprentissage et de développement professionnel. Nous sommes enthousiastes à l'idée d'appliquer ces compétences et ces connaissances acquises dans les phases suivantes de notre travail et dans nos futures initiatives.
 
 ## Annexes
 
