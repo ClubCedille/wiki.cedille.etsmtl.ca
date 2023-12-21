@@ -53,6 +53,40 @@ Notre processus de collaboration a été fortement influencé par les principes 
 
 ## Architecture technique
 
+![](architecture-technique.png)
+
+### Kubernetes et Sidero Omni
+
+Pour la gestion des applications déployés, nous avons choisis d'utiliser la technologie des conteneurs. Cela permet une meilleure isolation entre les différentes applications et une gestion plus facile des dépendances grâce aux Dockefiles. Pour gérer les déploiement de conteneurs sur nos systèmes, nous avont choisi d'utiliser Kubernetes puisque c'est le standard en entreprise et que ses capacités de coordination sont extrêmement puissants. Kubernetes permet 2 types de nodes: controlplane et worker. Dans notre cas, nous avons déployés 3 controlplanes et 3 workers. Les 3 controlplanes permettent au cluster Kubernetes lui-même d'avoir une haute disponibilité (si un des nodes est éteint ou mis à jour, il n'y a pas d'impact sur les capacités du cluster). Les 3 workers permettent aux applications ainsi qu'au stockage d'avoir de la haute disponibilité.
+
+Kubernetes est un système, mais ce n'est pas proprement un système d'exploitation. Ici, nous avons choisi Talos OS: c'est un système d'exploitation Linux entièrement construit autours de Kubernetes. La plupart des processus que l'on trouve dans un système Linux standard sont d'ailleurs manquant afin de réduire la surface d'attaque. De même, une partie importante du système de fichier est en lecture seule.
+
+L'autre avantage de ce système d'exploitation est qu'il peut être entièrement contrôlé par un API, permettant donc de meilleures automatisations. La compagnie qui a développé cet OS a d'ailleut aussi développer un service SaaS qui se connecte à cet API et automatiser une partie importante de la gestion du cluster: Sidero Omni. Puisque que Sidero est un commanditaire du club étudiant, nous avons droit à une license pour utiliser ce logiciel habituellement payant. Cela nous permet de gérer facilement les différnts serveurs à distance via une interface web. Le contrôle via l'API Kubernetes passe aussi par cette solution SaaS, permettant donc un contrôle des accès plus strict avec OAuth.
+
+### Gestion GitOps
+
+Pour la gestion des déploiements et des configurations, nous avons choisis une approche pleinement GitOps. Cette approche permet de réduire les étapes impératives et difficiles à reproduire pour avoir des environnement facile à reproduire. De plus la tracabilité de git permet d'avoir des flux de contrôle de changements plus avancés et d'identifier la source du problème plus rapidement. 
+
+Pour atteindre cet objectif de GitOps, nous avons donc utilisé deux outils: ArgoCD et Terraform. ArgCD est un outil spécifique à Kuberenetes, qui est déployé sur le cluster. Celui-ci surveille tous les manifestes Kubernetes sur le répertoire Git et fait les modifications nécessaires pour que le cluster soit configuré accordément à ces manifestes. Cela peut être des configuration comme des déploiement applicatifs. Le second outil, Terraform, est surtout utlisé pour configurer les dépendances autours de Kubernetes. Cet outil permet de définir des configuration de services cloud et de lier des variables entre elles entre plusieurs services, offrant une composition de ressources cloud très puissante. Pour le moment, la création de répertoire git ainsi que la configuration du services de gestion de clées KMS de Google Cloud sont les deux principaux services configurés avec Terraform.
+
+### Stockage distribué
+
+Afin d'offrir un service de qualité, il est important que les services restent toujours disponibles même en cas de pannes ou mises à jours de système. Kuberenetes offre une façon de distribuer des ressources applicatives pour atteindre de la haute disponibilité. Toutefois, lorsque des données persistentes sont impliqués, cela est un peu plus complexe. En effet, Kuberenetes laisse le soin aux administrateurs le soin de définir le stockage, ne fournissant qu'une abstraction. Cela permet une architecture très flexible (compatible autant avec des environnements physique que cloud), mais implique plus de travail pour le configurer. Une solution simple consiste à utiliser le stockage local d'un noeud pour enregistrer les données. Toutefois, avec cette solution, si le noeud tombe en panne les données deviennt indisponible et on perd la disponibilité de l'application. Pour éviter cette situation, il faut répertir les données sur différents serveurs de façon à ce qu'il y ait toujours un minimum de 2 copies de chaque donnée sur 2 différents serveurs.
+
+Plusieurs technologies permettent de faire cela, ici nous avons choisi Mayastor. C'est un engin de stockage basé sur la spécifiquation NVMe-oF, un protocole de disque plus récente que SCSI et qui permet de mieux bénificier des capacités de parallélisation des SSD. Mayastor est aussi pleinement conçu pour et intégré avec Kubernetes, réduisant les risques de problèmes de compatibilité qui sont parfois présents avec des engins d'abord conçu pour des systèmes non-Kuberenetes.
+
+Pour les applications, ils n'utilisent pas directement Mayastor, mais plutôt les abstractions Kubernetes: StorageClass, PersistentVolumeClaim et PersistentVolume. Cela nous permettrait de changer l'engin de stockage dans le futur si nécessaire.
+
+### Gestion des secrets
+
+La gestion des secret est toujours un aspect complexe et où une mauvaise configuration peut avoir des conséquences désastreuses. C'est d'ailleurs souvent à travers la gestion des secrets que l'on voit des pirates informatiques infiltrer des systèmes. Ici, nous avons choisi d'utiliser Hashicorp Vault, standard dans l'industrie pour la gestion de secrets à grande échelle. Pour configurer celui-ci, nous avons déployés un outil développé par la communauté RedHat: [Vault Config Operator](https://github.com/redhat-cop/vault-config-operator/). Cet outil ajoute des définitions de manifestes Kuberenetes (CRD), nous permettant de créer des politiques d'accès, des configurations de rotation de clées ainsi que de définir de nouveaux secrets aléatoires à travers des manifestes Kuberenetes qui sont ensuite déployés par ArgoCD. Cette approche nous permet de conserver une approche GitOps sans avoir à exposer les secrets dans les fichiers sur Git.
+
+### Observabilité
+
+L'observabilité est une pierre angulaire de toute approche DevOps, permettant à la fois au développeur et aux administrateurs d'identifier rapidement la source d'un problème. Dans un système distribué comme celui que nous avons conçu, les traces sont particulièrements importantes, puisque c'est ce qui nous permet de suivre le chemin d'une requête à travers les multiples systèmes. 
+
+Afin de collecter ces traces, nous avons mis à profit un outil appelé *Pixi*. Cet outil utilise une innovation relativement récente du noyau Linux: eBPF (extended Berkeley Packet Filter). Ceci permet à des applications de rouler certaines opérations dans le contexte prévilégié du noyau Linux de façon sécuritaire. Ceci permet à Pixi d'analyse les communications entre les processus et le réseau et de recréer automatiquement des traces, sans avoir à configurer chaque composante pour qu'elle ajoute son contexte à la trace. Par la suite, ces traces sont exportés vers un agent OpenTelemetry. OpenTelemetry est un standard pour tout ce qui est observabilité et permet de faciliter le transfert de traces, métriques et logs entre plusieurs systèmes. Les agent OpenTelemetry agissent comme échangeurs, permettant de recevoir et retransemettre des traces, métriques et logs. Ici, nous redirigeons ces informations vers la base de données de haute performance Clickhouse. Enfin, nous utilisons Grafana pour se connecter à cette base de données et afficher toutes ces traces, métriques et logs.
+
 
 ## Autres solutions envisagées
 
@@ -172,6 +206,10 @@ Avec ce projet, j'ai eu l'opportunité d'apprendre comment utiliser et concevoir
 
 ### Simon
 
+Avant de démarré ce projet, j'avais déjà une expérience superficielle avec plusieurs de ces outils. Toutefois, c'était la première fois que j'avais l'occasion d'explorer plus en profondeur ces technologies qui, je crois, formeront le futur des opérations à grande échelle d'entreprises. Notamment ce qui concerne la gestion des secrets et du stockage, je crois que nous avons configuré les outils de façon très intéressante et que cela fonctionnerait très bien pour de milliers de serveurs.
+
+Mais surtout, j'ai beaucoup appris en ce qui concerne le travail d'équipe et l'organisation du travail. Ce projet comportait peu d'objectifs fixes et il aura fallut mettre en place certaines mesures pour atteindre la rigueur requise pour avancer le projet à rythme satisfaisant. Mettre en place de fort processus de suivi des tâches, de *Pull Requests*, d'ateliers de travail réguliers et plus fut essentiel à la réussite de ce projet.
+
 ## Conclusion
 
 En rétrospective, le projet Plateforme CEDILLE a été une expérience formatrice, riche en enseignements techniques et en gestion de projet. Nous avons relevé le défi de concevoir et de mettre en place une infrastructure informatique complexe, ce qui a demandé une coordination minutieuse et une collaboration étroite entre les membres de l'équipe.
@@ -185,5 +223,10 @@ Pour les futurs projets, notre conseil serait de valoriser l'adaptabilité et la
 En somme, ce projet a été une expérience enrichissante qui a dépassé nos attentes en termes d'apprentissage et de développement professionnel. Nous sommes enthousiastes à l'idée d'appliquer ces compétences et ces connaissances acquises dans les phases suivantes de notre travail et dans nos futures initiatives.
 
 ## Annexes
+
+Document de vision: https://wiki-cedille-etsmtl-ca-git-vision-cedille.vercel.app/docs/overview/
+Sprints: https://wiki-cedille-etsmtl-ca-git-vision-cedille.vercel.app/docs/sprints/
+Répertoire Git: https://github.com/ClubCedille/Plateforme-Cedille
+Suivi des tâches: https://github.com/orgs/ClubCedille/projects/3
 
 ---
