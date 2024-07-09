@@ -1,6 +1,12 @@
 # wiki.cedille.etsmtl.ca
 Documentation officielle du club CEDILLE avec le theme hugo [Docsy](https://www.docsy.dev/)
 
+## 2024 Update
+
+**Ce dépôt a été archivé. Le wiki du club cedille a été migré dans le dépôt [Plateforme Cedille](https://github.com/ClubCedille/Plateforme-Cedille) et disponible depuis [wiki.omni.cedille.club](https://wiki.omni.cedille.club/fr/)**
+
+
+
 ## Pour commencer
 
 Configuration requise :
